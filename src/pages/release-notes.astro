@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import legacyReleaseNotesHtml from '@/content/legacy-release-notes.html?raw';
 import { site } from '@/data/site';
 ---
 
@@ -7,7 +8,7 @@ import { site } from '@/data/site';
   <section class="page-header">
     <p class="eyebrow">Changelog</p>
     <h1>Release Notes</h1>
-    <p class="lead">Recent release highlights. The raw Markdown feed remains available for update clients and historical links.</p>
+    <p class="lead">Current release highlights and the legacy release history from the original site.</p>
   </section>
 
   <section class="section split">
@@ -28,14 +29,15 @@ import { site } from '@/data/site';
       </ul>
     </div>
     <div class="callout">
-      <h2>Full history</h2>
+      <h2>Newer releases</h2>
       <p>
-        The complete release history is maintained in the raw release notes file and GitHub releases.
+        Newer release changelogs are maintained on GitHub. The updater feed still exists for the app, but this page is the readable release history.
       </p>
       <div class="actions">
-        <a class="button" href="/ootdReleaseNotes.md">Raw release notes</a>
-        <a class="button secondary" href={site.releasesUrl}>GitHub releases</a>
+        <a class="button" href={site.releasesUrl}>GitHub releases</a>
       </div>
     </div>
   </section>
+
+  <section class="section legacy-release-notes" set:html={legacyReleaseNotesHtml} />
 </BaseLayout>

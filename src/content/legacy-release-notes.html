@@ -1,0 +1,281 @@
+<h2>All newer releases and the changelogs are available on the <a href="https://github.com/mscrivo/OotD/releases">GitHub Releases page</a></h2>
+
+<hr>
+
+<h2>Older Releases:</h2>
+
+<h4>Version 3.7.5 <small>Dec 2, 2018 (<a href="https://github.com/mscrivo/ootd/releases/download/3.7.5/ootd-3.7.5.0.exe">Download</a>)</small></h4>
+<ul>
+  <li>Fix issue where opening and closing Outlook while OotD was running, would cause OotD to stop working.</li>
+  <li>Potentially fix issue for some where OotD would refuse to start, citing that it could not find Outlook installed on the machine.</li>
+</ul>
+<h4>Version 3.7.1 <small>Sept 22, 2018 (<a href="https://github.com/mscrivo/ootd/releases/download/3.7.1/ootd-3.7.1.0.exe">Download</a>)</small></h4>
+<ul>
+  <li>Fix issue where Outlook was using 100% CPU when OotD was running. This was due to a workaround put in a long time ago for a crash with Outlook 2007 SP2 that is no longer necessary.</li>
+</ul>
+<h4>Version 3.7.0 <small>Sept 9, 2018 (<a href="https://github.com/mscrivo/ootd/releases/download/3.7.0/ootd-3.7.0.0.exe">Download</a>)</small></h4>
+<ul>
+  <li>Uses .NET Framework 4.7.2 for additional performance and HiDPI improvements.</li>
+  <li>Other miscellaneous fixes and polish.</li>
+</ul>
+<h4>Version 3.6.0 <small>March 18, 2018 (<a href="https://github.com/mscrivo/ootd/releases/download/3.6.0/ootd-3.6.0.0.exe">Download</a>)</small></h4>
+<ul>
+  <li>Now has a single installer for both 32-bit and 64-bit office, which should reduce confusion quite a bit.
+    <ul>
+      <li><strong>Important Notes</strong>: </li>
+    </ul>
+    <ol>
+      <li>If you had the 64-bit version installed, when upgrading, it will reset your OotD settings to the defaults.</li>
+      <li>To get a single installer to work, and in particular, to detect the bitness of Office, the minimum supported version had to be bumped to Office 2010 (from 2003).</li>
+    </ol>
+  </li>
+  <li>Uses .NET Framework 4.7.1 for additional performance and HiDPI improvements.</li>
+  <li>Uses a delayed scheduled task for running OotD on startup, which should reduce startup errors when trying to load Outlook prematurely.</li>
+  <li>Updater now shows release notes properly formatted.</li>
+</ul>
+<h4>Version 3.5.3 <small>Aug 20, 2017 (<a href="https://github.com/mscrivo/ootd/releases/download/3.5.3/ootd-3.5.3.exe">for Office 32-bit</a>, <a href="https://github.com/mscrivo/ootd/releases/download/3.5.3/ootd-3.5.3-x64.exe">for Office 64-bit</a>)</small></h4>
+<ul>
+    <li>Fixed issue that prevented Calendar/Inbox icons from showing up when using non-English language settings.</li>
+</ul>
+<h4>Version 3.5.2 <small>Aug 19, 2017 (<a href="https://github.com/mscrivo/ootd/releases/download/3.5.2/ootd-3.5.2.exe">for Office 32-bit</a>, <a href="https://github.com/mscrivo/ootd/releases/download/3.5.2/ootd-3.5.2-x64.exe">for Office 64-bit</a>)</small></h4>
+<ul>
+    <li>Fixed additional HiDPI scaling issues (courtesy of .NET 4.7 Framework).</li>
+    <li>Fixed an issue where update release notes did not render properly.</li>
+    <li>Added additional logging</li>
+</ul>
+<h4>Version 3.5.1 <small>Apr 10, 2017 (<a href="https://github.com/mscrivo/ootd/releases/download/3.5.1/ootd-3.5.1.exe">for Office 32-bit</a>, <a href="https://github.com/mscrivo/ootd/releases/download/3.5.1/ootd-3.5.1-x64.exe">for Office 64-bit</a>)</small></h4>
+<ul>
+    <li>Fixed issue where instances would not show up on monitors that had difference scaling factor than main monitor.</li>
+    <li>Fixed issue where calendar buttons were not showing up on custom calendars.</li>
+</ul>
+<h4>Version 3.5.0 <small>Dec 6, 2016 (<a href="https://github.com/mscrivo/ootd/releases/download/3.5.0/ootd-3.5.0.exe">for Office 32-bit</a>, <a href="https://github.com/mscrivo/ootd/releases/download/3.5.0/ootd-3.5.0-x64.exe">for Office 64-bit</a>)</small></h4>
+<ul>
+    <li>Updated to use .NET 4.6.2 for even better HiDPI support.</li>
+    <li>Fixed laggy resizing of windows.</li>
+    <li>Fixed flickering when moving/resizing of windows.</li>
+    <li>Misc fixes and performance enhancements to installer.</li>
+</ul>
+<h4>Version 3.4.0 <small>Mar 29, 2016 (<a href="https://github.com/mscrivo/ootd/releases/download/3.4.0/ootd-3.4.0.exe">for Office 32-bit</a>, <a href="https://github.com/mscrivo/ootd/releases/download/3.4.0/ootd-3.4.0-x64.exe">for Office 64-bit</a>)</small></h4>
+<ul>
+    <li>Added "new email" icon in Inbox view that allows you to compose a new email without having to go into Outlook.</li>
+    <li>Fixed issue where toolbar icons did not appear when using a custom folder view.</li>
+    <li>Fixed issue where Outlook app running in background was not being closed when shutting down OotD and you are using multiple instances.</li>
+    <li>Fixed issue where OotD would crash if you chose a view type that your version of Outlook does not support.</li>
+    <li>Upgraded to use .NET 4.6.1 Framework.</li>
+    <li>Misc performance enhancements.</li>
+</ul>
+<h4>Version 3.3.0 <small>Nov 18, 2015 (<a href="https://github.com/mscrivo/ootd/releases/download/3.3.0/ootd-3.3.0.exe">for Office 32-bit</a>, <a href="https://github.com/mscrivo/ootd/releases/download/3.3.0/ootd-3.3.0-x64.exe">for Office 64-bit</a>)</small></h4>
+<ul>
+    <li>Upgraded to use .NET 4.6 Framework</li>
+    <li>Added ability to view To-Do List</li>
+</ul>
+<h4>Version 3.2.6 <small>Sept 19, 2015 (<a href="https://github.com/mscrivo/ootd/releases/download/3.2.6/ootd-3.2.6.exe">for Office 32-bit</a>, <a href="https://github.com/mscrivo/ootd/releases/download/3.2.6/ootd-3.2.6-x64.exe">for Office 64-bit</a>)</small></h4>
+<ul>
+    <li>Fixed an issue where OotD would not start up in for particular Office configurations.  Office 365 being one of them.</li>
+    <li>Fixed an issue where an instance window could not be moved if configured to be anything other than the calendar view.</li>
+</ul>
+<h4>Version 3.2.5 <small>Aug 8, 2015 (<a href="https://github.com/mscrivo/ootd/releases/download/3.2.5/ootd-3.2.5.exe">for Office 32-bit</a>, <a href="https://github.com/mscrivo/ootd/releases/download/3.2.5/ootd-3.2.5-x64.exe">for Office 64-bit</a>)</small></h4>
+<ul>
+    <li>Fixed issue where OotD wouldn't start on systems with older versions of Office (notably 2007 and 2003).</li>
+</ul>
+<h4>Version 3.2.4 <small>July 25, 2015 (<a href="https://github.com/mscrivo/ootd/releases/download/3.2.4/ootd-3.2.4.exe">for Office 32-bit</a>, <a href="https://github.com/mscrivo/ootd/releases/download/3.2.4/ootd-3.2.4-x64.exe">for Office 64-bit</a>)</small></h4>
+<ul>
+    <li>Fixed issue introduced in 3.2.1 where having OotD running would make Outlook unresponsive after some time.</li>
+    <li>Fixed various usability issues with top header bar.</li>
+    <li>Fixed issue where last instance position was not always remembered when starting up (2nd and final attempt).</li>
+    <li>Fixed issue where download window on HiDPI displays was cut off at the bottom.</li>
+</ul>
+<h4>Version 3.2.3 <small>July 14, 2015 (<a href="https://github.com/mscrivo/ootd/releases/download/3.2.3/ootd-3.2.3.exe">for Office 32-bit</a>, <a href="https://github.com/mscrivo/ootd/releases/download/3.2.3/ootd-3.2.3-x64.exe">for Office 64-bit</a>)</small></h4>
+<ul>
+    <li>Made instances sticky to make it easier to line them up and organize.</li>
+    <li>Fixed issue where last instance position was not always remembered when starting up.</li>
+</ul>
+<h4>Version 3.2.2 <small>July 2, 2015 (<a href="https://github.com/mscrivo/ootd/releases/download/3.2.2/ootd-3.2.2.exe">for Office 32-bit</a>, <a href="https://github.com/mscrivo/ootd/releases/download/3.2.2/ootd-3.2.1-x64.exe">for Office 64-bit</a>)</small></h4>
+<ul>
+    <li>Fixed issue where top control bar would sometimes not be uniform in color.</li>
+    <li>Fixed multiple issues with tray icon context menus showing incorrect items or duplicate items.</li>
+    <li>Performance improvements in resizing/moving windows.</li>
+    <li>Fixed crash when selecting a folder than clicking cancel.</li>
+    <li>Other minor fixes and internal component upgrades.</li>
+</ul>
+<h4>Version 3.2.1 <small>June 27, 2014 (<a href="https://github.com/mscrivo/ootd/releases/download/3.2.1/ootd-3.2.1.exe">for Office 32-bit</a>, <a href="https://github.com/mscrivo/ootd/releases/download/3.2.1/ootd-3.2.1-x64.exe">for Office 64-bit</a>)</small></h4>
+<ul>
+    <li>Fixed issue where HiDPI enhancements from .NET 4.5.2 were not being applied properly.</li>
+    <li>Streamlined installation/upgrade process. Will now offer to automatically close app during upgrade process.</li>
+</ul>
+<h4>Version 3.2.0 <small>June 25, 2014 (<a href="https://github.com/mscrivo/ootd/releases/download/3.2.0/ootd-3.2.0.exe">for Office 32-bit</a>, <a href="https://github.com/mscrivo/ootd/releases/download/3.2.0/ootd-3.2.0-x64.exe">for Office 64-bit</a>)</small></h4>
+<ul>
+    <li>Updated .NET framework to 4.5.2 to take advantage of performance improvements and UI fixes for HiDPI. The downside to this is that the lowest supported version of Windows is now Vista SP2. Please use an older verison if you are still using Windows XP.</li>
+</ul>
+<h4>Version 3.1.0 <small>Apr 27, 2014 (<a href="https://github.com/mscrivo/ootd/releases/download/3.1.0/ootd-3.1.0.exe">for Office 32-bit</a>, <a href="https://github.com/mscrivo/ootd/releases/download/3.1.0/ootd-3.1.0-x64.exe">for Office 64-bit</a>)</small></h4>
+<ul>
+    <li><span style="color: #ff0000;">Note: Last release with Windows XP Support.</span></li>
+    <li>Add HiDPI Support (Requires a version of Microsoft Office that also supports HiDPI (2010 and higher I believe)</li>
+    <li>Minor bug fixes</li>
+</ul>
+<h4>Version 3.0.0 <small>Feb 19, 2014 (<a href="https://github.com/mscrivo/ootd/releases/download/v3.0.0/ootd-3.0.0.exe">for Office 32-bit</a>, <a href="https://github.com/mscrivo/ootd/releases/download/v3.0.0/ootd-3.0.0-x64.exe">for Office 64-bit</a>)</small></h4>
+<ul>
+    <li>Added buttons for: Go To Today, Previous and Next to the calendar view. They are contextsensitive depending on what view you are looking at.</li>
+    <li>Replaced text on calendar buttons with images to make it more visually appealing and compact.</li>
+    <li>Added currently selected date to the header bar in the calendar view.</li>
+    <li>Made transparency slider bar much easier to use.</li>
+    <li>
+        Added automatic check for updates functionality.<ul>
+            <li>Checks automatically every 20 days, or can be triggered via icon in system tray.</li>
+        </ul>
+        </li>
+    <li>Added new logging framework to capture failures/program flow to help diagnose issues.</li>
+    <li>
+        Fixed several bugs, including:<ul>
+            <li>"Calendar Could Not be Read" no longer pops up when switch calendar views in Outlook 2013</li>
+            <li>Fixed issue where month view would not be the default calendar view for new instances.</li>
+            <li>Fixed issue where moving cursor down from top of the window onto the calendar buttons would continue to show the resize cursor.</li>
+            <li>Fixed issue where "Remove Instance" dialog would pop up behind instance windows.</li>
+            <li>When adding a new instance, its position is now properly saved.</li>
+        </ul>
+        </li>
+</ul>
+<h4>Version 2.1.3 <small>July 8, 2013 (<a href="ootd-2.1.3.exe">for Office 32-bit</a>, <a href="ootd-2.1.3-x64.exe">for Office 64-bit</a>)</small></h4>
+<ul>
+    <li>Fixed an issue where OotD would crash on windows startup if the Windows RPC server was not yet available. It will now silently retry in the background until it is available for up to 1 minute.</li>
+    <li>Added a message to let users know if they've installed the wrong version (32-bit vs 64-bit).</li>
+</ul>
+<h4>Version 2.1.2 <small>Jan 23, 2013 (<a href="ootd-2.1.2.exe">for Office 32-bit</a>, <a href="ootd-2.1.2-x64.exe">for Office 64-bit</a>)</small></h4>
+<ul>
+    <li>Fixed issue where right clicking on ootd would show the context menu behind the window, thus not allowing you to click it.</li>
+</ul>
+<h4>Version 2.1.1 <small>Dec 4, 2012 (<a href="ootd-2.1.1.exe">for Office 32-bit</a>, <a href="ootd-2.1.2-x64.exe">for Office 64-bit</a>)</small></h4>
+<ul>
+    <li>Fixed poor performance (flickering, lag) when resizing/moving windows after the 2.1.0 release.</li>
+    <li>Fixed issue where the calendar buttons wouldn't show up for the calendar view unless there was at least 1 appointment on your calendar.</li>
+</ul>
+<h4>Version 2.1.0 <small>Dec 2, 2012 (<a href="ootd-2.1.0.exe">for Office 32-bit</a>, <a href="ootd-2.1.0-x64.exe">for Office 64-bit</a>)</small></h4>
+<ul>
+    <li>Fixed issue where other windows could pop up behind Outlook on the Desktop on Windows Vista and above.</li>
+</ul>
+<h4>Version 2.0.2 <small>June 28, 2012 (<a href="ootd-2.0.2.exe">for Office 32-bit</a>, <a href="ootd-2.0.2-x64.exe">for Office 64-bit</a>)</small></h4>
+<ul>
+    <li>Fixed issue where Calendar controls in upper right would disappear if you selected a custom folder that was a Calendar.</li>
+    <li>Better compatibility with older versions of Office</li>
+</ul>
+<h4>Version 2.0.1 <small>Dec 3, 2011 (<a href="ootd-2.0.1.exe">for Office 32-bit</a>, <a href="ootd-2.0.1-x64.exe">for Office 64-bit</a>)</small></h4>
+<ul>
+    <li>Added ability to lock all window positions and opacity in the tray icon menu to prevent accidental movement.</li>
+    <li>Fixed issue where ootd windows would flash intermittetently.</li>
+    <li>Other minor fixes.</li>
+</ul>
+<h4>Version 2.0 <small>July 24, 2011 (<a href="ootd-2.0.exe">for Office 32-bit</a>, <a href="ootd-2.0-x64.exe">for Office 64-bit</a>)</small></h4>
+<ul>
+    <li>Completey new way to move and size windows. Grabbing the header allows for movement and grabbing any edge allows for sizing. The cumbersome preferences window is gone.</li>
+    <li>Opacity slider directly in header of each instance window.</li>
+    <li>Day/Work/WorkWeek/Month buttons in the header for the Calendar view (#1 most requested feature).</li>
+    <li>Outlook 2003 is now the minimum required version.</li>
+    <li>Multiple fixes and enhancements when working with multiple instances.</li>
+    <li>Other various bug fixes.</li>
+</ul>
+<h4>Version 1.6.1 <small>March 17, 2011 (<a href="ootd-1.6.1.exe">for Office 32-bit</a>, <a href="ootd-1.6.1-x64.exe">for Office 64-bit</a>)</small></h4>
+<ul>
+    <li>Added option to allow disabling editing in any given instance.</li>
+</ul>
+<h4>Version 1.6.0 <small>Aug 29, 2010 (<a href="ootd-1.6.0.exe">for Office 32-bit</a>, <a href="ootd-1.6.0-x64.exe">for Office 64-bit</a>)</small></h4>
+<ul>
+    <li>Support for Outlook 2010 both 32-bit and 64-bit.</li>
+    <li>Fixed issue where ootd would crash or hang after opening and closing an item.</li>
+    <li>Fixed issue where ootd would fail to start onVista/Windows 7 with the message:"Unable to get the window handle for the 'AxOVCtl' control. Windowless ActiveX controls are not supported."</li>
+    <li>Fixed issue where changing the view type to something other than calendar and then restarting ootd would result in a crash.</li>
+</ul>
+<p>
+    <strong>Known Issue(s):</strong>
+</p>
+<ul>
+    <li>You cannot interact with the calendar view when using Outlook 2010.Every other view works fine.This appears to be a bug on Microsoft's end, and will hopefully be fixed in a future update. [Update]: Office 2010 SP1 fixes this issue.</li>
+</ul>
+<h4>Version 1.5.4 <small>Apr 15, 2010 (<a href="setupv154.exe">for Office 32-bit</a>)</small></h4>
+<ul>
+    <li>On Windows 7, the calendar will always remain visible when you hover over the "Show Desktop"button.</li>
+</ul>
+<h4>Version 1.5.3 <small>Apr 14, 2010 (<a href="setupv153.exe">for Office 32-bit</a>)</small></h4>
+<ul>
+    <li>Several under the hood cleanups and fixes resulting in a smaller download package.</li>
+    <li>
+        Several improvements to the installer, including:<ul>
+            <li>Proper Windows 7 support</li>
+            <li>Removed option to create Desktop and Quick Launch icons since the app should always be running anyway and goes against the philosophy of this program (to have as little icons on the desktop as possible).</li>
+            <li>Ability to run the application after installing onVista/Windows 7.</li>
+            <li>Web site and Uninstall shortcuts in the Start Menu Group</li>
+            <li>Uninstall now fully cleans up any files left behind.</li>
+        </ul>
+        </li>
+</ul>
+<h4>Version 1.5.2 <small>Feb 11, 2009 (<a href="setupv152.exe">for Office 32-bit</a>)</small></h4>
+<ul>
+    <li>Fixed issue where it incorrectly reported that Outlook was not installed when regional settings were set to a non-english setting.</li>
+</ul>
+<h4>Version 1.5.1 <small>Jan 9, 2009</small></h4>
+<ul>
+    <li>Better detection of required version of Outlook.Previously, it incorrectly reported that Outlook was not installed if it was installed to a non-standard location.</li>
+</ul>
+<h4>Version 1.5.0 <small>Dec 10, 2008 (<a href="setupv150.exe">for Office 32-bit</a>)</small></h4>
+<ul>
+    <li>[Feature] <a href="http://www.sytone.com/">Jon Bullen</a> Implemented Outlook views. You can now select one of the built-in Outlook views for each instance.</li>
+    <li>[<b>Fixed</b>] Better detection of whether Outlook 2000 or higher is installed. Previously, it would report that Outlook was not installed in some cases even if it was. Note. This requires that Office was installed to the default location.</li>
+    <li>[<b>Fixed</b>] "OutlookDesktop" and "InstanceManager" windows no longer appear when alt-tabbing in Windows.</li>
+    <li>Added tray icon notification baloon to indicate for new users that the tray icon is used to configure OotD.</li>
+</ul>
+<h4>Version 1.4.5 <small>Aug 2, 2008 (<a href="setupv145.exe">for Office 32-bit</a>)</small></h4>
+<ul>
+    <li>[<b>Fixed</b>] Startup problems encountered by some people.</li>
+    <li>[<b>Fixed</b>] Various minor bugs.</li>
+</ul>
+<h4>Version 1.4.1 <small>Mar 21, 2008 (<a href="setupv141.exe">for Office 32-bit</a>)</small></h4>
+<ul>
+    <li>[<b>Fixed</b>] Error message on startup when Microsoft Outlook is not installed. OotD now detects whether Microsoft Outlook is installed and provides a friendly message.</li>
+    <li>[<b>Fixed</b>] Installer would not shut down OotD properly before installation or removal. OotD now allows only one instance per Windows user. The installer will force you to close the program before upgrading/uninstalling.</li>
+</ul>
+<h4>Version 1.4.0 <small>Dec 29, 2007 (<a href="setupv140.exe">for Office 32-bit</a>)</small></h4>
+<ul>
+    <li>[<strong>Feature</strong>] Ability to have multiple instances pinned to the desktop, all managed by one instance of the program and one instance of Outlook.</li>
+</ul>
+<h4>Version 1.3.5 <small>Nov 28, 2007 (<a href="setupv135.exe">for Office 32-bit</a>)</small></h4>
+<ul>
+    <li>[Fixed] Bug which prevented moving the window to another monitor.</li>
+</ul>
+<h4>Version 1.3.4 <small>Nov 21, 2007</small></h4>
+<ul>
+    <li>[<strong>Feature</strong>] Ability to select any folder within Outlook, including shared and public folders.</li>
+    <li>[Fixed] Some multi-monitor fixes. A bug where it jumps on certain multi-monitor setups still exists.</li>
+    <li>[Fixed] An extra instance of Outlook will no longer be loaded, it will always use the already open instance if there is one.</li>
+    <li>Note: Outlook XP or higher is required for this release and all newer releases.</li>
+</ul>
+<h4>Version 1.3.3 <small>Apr 3, 2007 (<a href="setupv133.exe">for Office 32-bit</a>)</small></h4>
+<ul>
+    <li>[<strong>Feature</strong>] Currently selected day changes when your computer's date rolls over to the next day.</li>
+    <li>[Fixed] Red "X" is no longer seen when running on Windows XP 64-bit.</li>
+    <li>[Fixed] Uninstaller will now close all open instances before attempting uninstall.</li>
+</ul>
+<h4>Version 1.3.2 <small>Feb 20, 2007</small></h4>
+<ul>
+    <li>[<strong>Feature</strong>] Ability to show/hide the desktop component by double clicking the tray icon.</li>
+    <li>[Fixed] Better multi-monitor support.</li>
+</ul>
+<h4>Version 1.3.1 <small>Feb 17, 2007</small></h4>
+<ul>
+    <li>Fixed erroneous error message when launching preferences dialog.</li>
+</ul>
+<h4>Version 1.3 <small>Feb 17, 2007</small></h4>
+<ul>
+    <li>[<strong>Feature</strong>] Tray Icon now shows the current day of the month.</li>
+    <li>[<strong>Feature</strong>] You can now switch between different outlook views (calendar, inbox, contacts, tasks, etc) by right clicking the tray icon.</li>
+    <li>[Fixed] Added Windows Vista compatibility</li>
+    <li>[Fixed] Reducing desktop resolution would cause an error when starting Outlook on the Desktop the next time if it's dimensions were greater than your desktop dimensions.</li>
+</ul>
+<h4>Version 1.2 <small>Dec 20, 2006</small></h4>
+<ul>
+    <li>Upgraded to .NET Framework 2.0.</li>
+    <li>Nicer looking Application Icon.</li>
+    <li>Fixed Non-US regional settings crash on application launch.</li>
+</ul>
+<h4>Version 1.0 <small>Sept 29, 2005</small></h4>
+<ul>
+    <li>Initial Version.</li>
+</ul>

@@ -50,7 +50,6 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
             );
           })
         }
-        <a class="nav-donate" href={site.donateUrl}>Donate</a>
       </nav>
     </header>
     <main>
@@ -59,11 +58,11 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     <footer class="site-footer">
       <div>
         <strong>{site.name}</strong>
-        <p>A small Windows utility by Michael Scrivo.</p>
+        <p>A Windows utility by Michael Scrivo.</p>
       </div>
       <div class="footer-links">
         <a href={site.sourceUrl}>GitHub</a>
-        <a href="/ootdReleaseNotes.md">Raw release notes</a>
+        <a href="/release-notes">Release notes</a>
         <a href="/sitemap.xml">Sitemap</a>
       </div>
     </footer>

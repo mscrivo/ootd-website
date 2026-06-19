@@ -9,7 +9,6 @@ export const site = {
   downloadUrl: 'https://github.com/mscrivo/OotD/releases/download/5.0.229/ootd-5.0.229.0.exe',
   releasesUrl: 'https://github.com/mscrivo/OotD/releases',
   sourceUrl: 'https://github.com/mscrivo/OotD',
-  donateUrl: 'https://github.com/sponsors/mscrivo',
 };
 
 export const navItems = [
