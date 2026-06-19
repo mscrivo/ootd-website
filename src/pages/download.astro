@@ -1,0 +1,33 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { site } from '@/data/site';
+---
+
+<BaseLayout title="Download" description="Download the latest Outlook on the Desktop release.">
+  <section class="page-header">
+    <p class="eyebrow">Latest release</p>
+    <h1>Download Outlook on the Desktop</h1>
+    <p class="lead">Version {site.latestVersion} is available from GitHub releases.</p>
+  </section>
+
+  <section class="section split">
+    <div class="callout">
+      <h2>Current version</h2>
+      <p>
+        Download OotD {site.latestVersion}. Windows SmartScreen may flag the app as an unknown publisher because current builds are not code signed.
+      </p>
+      <div class="actions">
+        <a class="button" href={site.downloadUrl}>Download installer</a>
+        <a class="button secondary" href={site.releasesUrl}>All releases</a>
+      </div>
+    </div>
+    <div class="callout">
+      <h2>Requirements</h2>
+      <ul class="compat-list">
+        <li>Outlook Classic is required.</li>
+        <li>The new Outlook app is not supported.</li>
+        <li>Use GitHub releases for older versions and historical installers.</li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

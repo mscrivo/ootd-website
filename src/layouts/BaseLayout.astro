@@ -1,0 +1,54 @@
+---
+import AdSense from '@/components/AdSense.astro';
+import { navItems, site } from '@/data/site';
+import '@/styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description = site.description } = Astro.props;
+const pageTitle = title ? `${title} | ${site.name}` : site.name;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={new URL(Astro.url.pathname, site.url).toString()} />
+    <link rel="icon" href="/assets/logo.png" />
+    <AdSense />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Outlook on the Desktop home">
+        <img src="/assets/logo.png" alt="" width="44" height="44" />
+        <span>Outlook on the Desktop</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div>
+        <strong>{site.name}</strong>
+        <p>A small Windows utility by Michael Scrivo.</p>
+      </div>
+      <div class="footer-links">
+        <a href={site.sourceUrl}>GitHub</a>
+        <a href="/ootdReleaseNotes.md">Raw release notes</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </footer>
+  </body>
+</html>

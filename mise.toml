@@ -1,0 +1,19 @@
+[tools]
+node = "24"
+pnpm = "11.8"
+
+[tasks.install]
+description = "Install project dependencies"
+run = "pnpm install"
+
+[tasks.dev]
+description = "Start the Astro development server"
+run = "pnpm dev"
+
+[tasks.build]
+description = "Build the static site"
+run = "pnpm build"
+
+[tasks.preview]
+description = "Preview the built static site"
+run = "pnpm preview"
