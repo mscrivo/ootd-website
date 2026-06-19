@@ -1,0 +1,63 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { screenshots, site } from '@/data/site';
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">Windows utility for Outlook Classic</p>
+      <h1>Outlook on the Desktop</h1>
+      <p class="lead">
+        Keep your Outlook calendar, inbox, notes, tasks, and folders visible directly on your desktop without opening the full Outlook window.
+      </p>
+      <div class="actions">
+        <a class="button" href={site.downloadUrl}>Download {site.latestVersion}</a>
+        <a class="button secondary" href="/screenshots">View screenshots</a>
+      </div>
+      <ul class="compat-list">
+        <li>Works with Outlook Classic, not the new Outlook app.</li>
+        <li>Supports multiple desktop instances and virtual desktop assignment.</li>
+        <li>Current builds are published through GitHub releases.</li>
+      </ul>
+    </div>
+    <div class="product-shot">
+      <img src={screenshots[0].src} alt={screenshots[0].alt} width="1200" height="750" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="feature-grid">
+      <article class="feature">
+        <h3>Always visible</h3>
+        <p>Pin Outlook views to your desktop so your calendar and tasks stay in sight while you work.</p>
+      </article>
+      <article class="feature">
+        <h3>Flexible instances</h3>
+        <p>Create separate windows for calendar, inbox, notes, tasks, or custom folders and place each one where it belongs.</p>
+      </article>
+      <article class="feature">
+        <h3>Lightweight utility</h3>
+        <p>OotD is focused on one job: showing Outlook data on the desktop with minimal fuss.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section split">
+    <div>
+      <h2>Built for people who live in Outlook</h2>
+      <p class="lead">
+        Outlook on the Desktop is useful when your schedule is the center of your day and switching windows is friction you do not need.
+      </p>
+    </div>
+    <div class="callout">
+      <h3>Important compatibility note</h3>
+      <p>
+        The latest OotD versions require Outlook Classic. If Windows has switched you to the new Outlook, switch back to Classic before using OotD.
+      </p>
+      <div class="actions">
+        <a class="button" href="/download">Download latest release</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

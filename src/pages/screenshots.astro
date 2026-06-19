@@ -1,0 +1,21 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { screenshots } from '@/data/site';
+---
+
+<BaseLayout title="Screenshots" description="Screenshots of Outlook on the Desktop running on Windows.">
+  <section class="page-header">
+    <p class="eyebrow">Product views</p>
+    <h1>Screenshots</h1>
+    <p class="lead">Examples of OotD calendar views, multiple instances, tray controls, and configuration screens.</p>
+  </section>
+
+  <section class="section screenshot-grid">
+    {screenshots.map((screenshot) => (
+      <article class="screenshot">
+        <img src={screenshot.src} alt={screenshot.alt} loading="lazy" width="1200" height="750" />
+        <h3>{screenshot.title}</h3>
+      </article>
+    ))}
+  </section>
+</BaseLayout>

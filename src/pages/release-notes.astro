@@ -1,0 +1,41 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { site } from '@/data/site';
+---
+
+<BaseLayout title="Release Notes" description="Release notes and changelog for Outlook on the Desktop.">
+  <section class="page-header">
+    <p class="eyebrow">Changelog</p>
+    <h1>Release Notes</h1>
+    <p class="lead">Recent release highlights. The raw Markdown feed remains available for update clients and historical links.</p>
+  </section>
+
+  <section class="section split">
+    <div class="release-panel">
+      <h2>{site.latestVersion}</h2>
+      <h3>Important</h3>
+      <ul>
+        <li>Windows SmartScreen may flag this version as an unknown publisher because current builds are not code signed.</li>
+        <li>OotD only works with Outlook Classic, not the new Outlook app.</li>
+      </ul>
+      <h3>Features</h3>
+      <ul>
+        <li>Added Simplified Chinese, Japanese, and Portuguese (Brazil) localizations.</li>
+      </ul>
+      <h3>Fixes</h3>
+      <ul>
+        <li>Fixed an issue where certain view types were reset to the default calendar view when restarting the app.</li>
+      </ul>
+    </div>
+    <div class="callout">
+      <h2>Full history</h2>
+      <p>
+        The complete release history is maintained in the raw release notes file and GitHub releases.
+      </p>
+      <div class="actions">
+        <a class="button" href="/ootdReleaseNotes.md">Raw release notes</a>
+        <a class="button secondary" href={site.releasesUrl}>GitHub releases</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
