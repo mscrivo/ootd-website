@@ -65,8 +65,28 @@ img {
 
 .brand img {
   display: block;
-  width: 200px;
-  height: auto;
+  width: 48px;
+  height: 48px;
+}
+
+.brand-name {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+  white-space: nowrap;
+}
+
+.brand-name-main {
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #0078d4;
+}
+
+.brand-name-sub {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--muted);
 }
 
 nav {
@@ -442,8 +462,12 @@ p {
     gap: 10px;
   }
 
-  .brand img {
-    width: min(190px, 72vw);
+  .brand-name-main {
+    font-size: 1.5rem;
+  }
+
+  .brand-name-sub {
+    font-size: 0.72rem;
   }
 
   nav {

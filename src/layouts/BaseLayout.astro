@@ -24,13 +24,18 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={new URL(Astro.url.pathname, site.url).toString()} />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/assets/ootd-logo.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
     <AdSense />
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="/" aria-label="Outlook on the Desktop home">
-        <img src="/assets/ootd-logo.webp" alt="Outlook on the Desktop" width="200" height="64" />
+        <img src="/assets/ootd-logo.svg" alt="" width="48" height="48" />
+        <span class="brand-name">
+          <span class="brand-name-main">OotD</span>
+          <span class="brand-name-sub">Outlook on the Desktop</span>
+        </span>
       </a>
       <nav aria-label="Primary navigation">
         {
