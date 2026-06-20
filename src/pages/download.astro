@@ -1,13 +1,23 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { site } from '@/data/site';
+
+const releaseDate = new Date(site.releaseDate).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC',
+});
 ---
 
 <BaseLayout title="Download" description="Download the latest Outlook on the Desktop release.">
   <section class="page-header">
     <p class="eyebrow">Latest release</p>
     <h1>Download Outlook on the Desktop</h1>
-    <p class="lead">Version {site.latestVersion} is available from GitHub releases.</p>
+    <p class="lead">
+      Version {site.latestVersion} is available from GitHub releases, released
+      <time datetime={site.releaseDate}>{releaseDate}</time>.
+    </p>
   </section>
 
   <section class="section split">

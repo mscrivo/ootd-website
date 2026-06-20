@@ -288,6 +288,12 @@ p {
   margin-top: 20px;
 }
 
+.release-meta {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .button {
   display: inline-flex;
   align-items: center;

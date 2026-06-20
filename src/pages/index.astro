@@ -2,6 +2,13 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { features, screenshots, site } from '@/data/site';
 
+const releaseDate = new Date(site.releaseDate).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC',
+});
+
 const iconPaths: Record<string, string> = {
   check: 'M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z',
   pin: 'M16 9V4h1c.55 0 1-.45 1-1s-.45-1-1-1H7c-.55 0-1 .45-1 1s.45 1 1 1h1v5c0 1.66-1.34 3-3 3v2h5.97v7l1 1 1-1v-7H19v-2c-1.66 0-3-1.34-3-3z',
@@ -28,6 +35,11 @@ const iconPaths: Record<string, string> = {
         <a class="button" href={site.downloadUrl}>Download {site.latestVersion}</a>
         <a class="button secondary" href="/screenshots">View screenshots</a>
       </div>
+      <p class="release-meta">
+        Latest release {site.latestVersion} &middot; <time datetime={site.releaseDate}
+          >{releaseDate}</time
+        >
+      </p>
     </div>
     <div class="product-shot">
       <img src={screenshots[0].src} alt={screenshots[0].alt} width="1200" height="750" />
