@@ -11,11 +11,13 @@ import { faqs } from '@/data/site';
   </section>
 
   <section class="section faq-list">
-    {faqs.map((faq) => (
-      <article class="faq-item">
-        <h2>{faq.question}</h2>
-        {faq.answerHtml ? <p set:html={faq.answerHtml} /> : <p>{faq.answer}</p>}
-      </article>
-    ))}
+    {
+      faqs.map((faq) => (
+        <article class="faq-item">
+          <h2>{faq.question}</h2>
+          {faq.answerHtml ? <p set:html={faq.answerHtml} /> : <p>{faq.answer}</p>}
+        </article>
+      ))
+    }
   </section>
 </BaseLayout>

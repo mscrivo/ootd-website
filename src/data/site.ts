@@ -160,7 +160,7 @@ export const faqs: FaqItem[] = [
   {
     question: 'How do I uninstall Outlook on the Desktop?',
     answer:
-      "Exit OotD from the tray icon first (right-click the icon and choose Exit), then uninstall it from Windows Apps & Features (or Add/Remove Programs on older Windows).",
+      'Exit OotD from the tray icon first (right-click the icon and choose Exit), then uninstall it from Windows Apps & Features (or Add/Remove Programs on older Windows).',
   },
   {
     question: "I've found a bug. How do I contact the author?",

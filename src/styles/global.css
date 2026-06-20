@@ -10,7 +10,14 @@
   --accent-dark: #155564;
   --gold: #e4a72f;
   --shadow: 0 18px 50px rgba(24, 38, 55, 0.12);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
 }
 
 * {
@@ -123,18 +130,20 @@ img {
   height: 2px;
   border-radius: 999px;
   background: var(--text);
-  transition: transform 160ms ease, opacity 160ms ease;
+  transition:
+    transform 160ms ease,
+    opacity 160ms ease;
 }
 
-.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+.nav-toggle[aria-expanded='true'] .nav-toggle-bar:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
 
-.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+.nav-toggle[aria-expanded='true'] .nav-toggle-bar:nth-child(2) {
   opacity: 0;
 }
 
-.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+.nav-toggle[aria-expanded='true'] .nav-toggle-bar:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
 
@@ -157,11 +166,15 @@ nav a {
   padding: 0 11px;
   color: #435064;
   font-weight: 720;
-  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease, transform 150ms ease;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease,
+    transform 150ms ease;
 }
 
 nav a::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 12px;
   right: 12px;
@@ -171,7 +184,9 @@ nav a::after {
   background: var(--accent);
   opacity: 0;
   transform: scaleX(0.5);
-  transition: opacity 150ms ease, transform 150ms ease;
+  transition:
+    opacity 150ms ease,
+    transform 150ms ease;
 }
 
 nav a:hover,
@@ -190,7 +205,7 @@ nav a.is-active::after {
 }
 
 nav a.is-external:not(.is-icon)::before {
-  content: "";
+  content: '';
   width: 7px;
   height: 7px;
   margin-right: 7px;
@@ -469,7 +484,7 @@ p {
 }
 
 .compat-list li::before {
-  content: "";
+  content: '';
   display: block;
   width: 9px;
   height: 9px;

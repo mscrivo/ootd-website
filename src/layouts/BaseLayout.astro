@@ -31,37 +31,53 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
   <body>
     <header class="site-header">
       <div class="header-inner">
-      <a class="brand" href="/" aria-label="Outlook on the Desktop home">
-        <img src="/assets/ootd-logo.svg" alt="" width="48" height="48" />
-        <span class="brand-name">
-          <span class="brand-name-main">OotD</span>
-          <span class="brand-name-sub">Outlook on the Desktop</span>
-        </span>
-      </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
-      <nav id="primary-nav" aria-label="Primary navigation">
-        {
-          navItems.map((item) => {
-            const isExternal = item.href.startsWith('http');
-            const itemPath = isExternal ? item.href : item.href.replace(/\/$/, '') || '/';
-            const isActive = !isExternal && itemPath === currentPath;
-            const isIcon = item.icon === 'github';
-            return (
-              <a class:list={["nav-link", { "is-active": isActive, "is-external": isExternal, "is-icon": isIcon }]} href={item.href} aria-current={isActive ? 'page' : undefined} aria-label={isIcon ? item.label : undefined}>
-                {isIcon ? (
-                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.5v-1.78c-2.78.62-3.37-1.22-3.37-1.22-.45-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.35 1.12 2.92.86.09-.66.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 6.98c.85 0 1.7.12 2.5.34 1.9-1.33 2.74-1.05 2.74-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.64 1.03 2.76 0 3.95-2.34 4.82-4.57 5.07.36.32.68.95.68 1.92v2.7c0 .28.18.6.69.5A10.18 10.18 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z" />
-                  </svg>
-                ) : item.label}
-              </a>
-            );
-          })
-        }
-      </nav>
+        <a class="brand" href="/" aria-label="Outlook on the Desktop home">
+          <img src="/assets/ootd-logo.svg" alt="" width="48" height="48" />
+          <span class="brand-name">
+            <span class="brand-name-main">OotD</span>
+            <span class="brand-name-sub">Outlook on the Desktop</span>
+          </span>
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Toggle navigation menu"
+        >
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <nav id="primary-nav" aria-label="Primary navigation">
+          {
+            navItems.map((item) => {
+              const isExternal = item.href.startsWith('http');
+              const itemPath = isExternal ? item.href : item.href.replace(/\/$/, '') || '/';
+              const isActive = !isExternal && itemPath === currentPath;
+              const isIcon = item.icon === 'github';
+              return (
+                <a
+                  class:list={[
+                    'nav-link',
+                    { 'is-active': isActive, 'is-external': isExternal, 'is-icon': isIcon },
+                  ]}
+                  href={item.href}
+                  aria-current={isActive ? 'page' : undefined}
+                  aria-label={isIcon ? item.label : undefined}
+                >
+                  {isIcon ? (
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.5v-1.78c-2.78.62-3.37-1.22-3.37-1.22-.45-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.35 1.12 2.92.86.09-.66.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 6.98c.85 0 1.7.12 2.5.34 1.9-1.33 2.74-1.05 2.74-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.64 1.03 2.76 0 3.95-2.34 4.82-4.57 5.07.36.32.68.95.68 1.92v2.7c0 .28.18.6.69.5A10.18 10.18 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z" />
+                    </svg>
+                  ) : (
+                    item.label
+                  )}
+                </a>
+              );
+            })
+          }
+        </nav>
       </div>
     </header>
     <main>
