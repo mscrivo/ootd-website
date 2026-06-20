@@ -417,6 +417,24 @@ p {
   margin: 0;
 }
 
+.callout-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.callout-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: var(--gold);
+}
+
+.callout-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
 .screenshot {
   overflow: hidden;
 }
