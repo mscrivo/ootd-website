@@ -52,6 +52,43 @@ export const screenshots = [
   },
 ];
 
+export const features = [
+  {
+    icon: 'check',
+    title: 'Fully functional',
+    description:
+      'Places a fully functional Microsoft Outlook calendar directly on your desktop. Create, edit, and remove items just like you would in Outlook.',
+  },
+  {
+    icon: 'pin',
+    title: 'Pinned to your desktop',
+    description: 'The calendar is pinned to your desktop so no windows can get stuck behind it.',
+  },
+  {
+    icon: 'gear',
+    title: 'Customizable',
+    description: "The calendar's position, size, and opacity are all easily adjustable.",
+  },
+  {
+    icon: 'monitor',
+    title: 'HiDPI & multi-monitor support',
+    description:
+      'Full HiDPI and multi-monitor support lets you place instances across all of your screens.',
+  },
+  {
+    icon: 'calendar',
+    title: 'Tray icon with day of month',
+    description:
+      'A tray icon that shows the current day of the month gives you quick access to the app’s more advanced options.',
+  },
+  {
+    icon: 'list',
+    title: 'Use any Outlook view',
+    description:
+      'Switch between any Outlook view, including calendar, inbox, contacts, tasks, and notes.',
+  },
+];
+
 export type FaqItem = {
   question: string;
   answer: string;

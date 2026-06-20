@@ -223,7 +223,7 @@ nav a.is-icon svg {
   grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
   align-items: center;
   gap: 30px;
-  padding: 30px 0 42px;
+  padding: 30px 0 24px;
 }
 
 .eyebrow {
@@ -316,6 +316,10 @@ p {
   padding: 44px 0;
 }
 
+.hero + .section {
+  padding-top: 8px;
+}
+
 .page-header {
   padding-bottom: 18px;
 }
@@ -377,6 +381,40 @@ p {
 .callout p {
   color: var(--muted);
   margin-bottom: 0;
+}
+
+.section-title {
+  margin: 0 0 18px;
+  font-size: 1.6rem;
+}
+
+.feature-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  color: #0078d4;
+  background: rgba(0, 120, 212, 0.1);
+}
+
+.feature-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.feature-head h3 {
+  margin: 0;
 }
 
 .screenshot {
@@ -554,9 +592,12 @@ p {
 
   .hero,
   .split,
-  .feature-grid,
   .screenshot-grid {
     grid-template-columns: 1fr;
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .hero {
@@ -610,6 +651,10 @@ p {
   .section,
   .page-header {
     width: min(100% - 20px, 1120px);
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
   }
 
   .page-header h1 {
