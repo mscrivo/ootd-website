@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://outlookonthedesktop.com/sitemap.xml
 Sitemap: https://outlookonthedesktop.com/sitemap-index.xml

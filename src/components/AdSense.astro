@@ -1,24 +1,7 @@
 ---
+// Loads the AdSense library once. Render this in <head> exactly once per page.
+// To place an ad unit in page content, use AdUnit.astro instead.
 import { site } from '@/data/site';
-
-interface Props {
-  slot?: string;
-  format?: string;
-  responsive?: boolean;
-}
-
-const { slot, format = 'auto', responsive = true } = Astro.props;
 ---
 
-<script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${site.publisherId}`} crossorigin="anonymous"></script>
-{slot && (
-  <ins
-    class="adsbygoogle"
-    style="display:block"
-    data-ad-client={site.publisherId}
-    data-ad-slot={slot}
-    data-ad-format={format}
-    data-full-width-responsive={responsive ? 'true' : 'false'}
-  />
-)}
-{slot && <script is:inline>{`(adsbygoogle = window.adsbygoogle || []).push({});`}</script>}
+<script is:inline async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${site.publisherId}`} crossorigin="anonymous"></script>

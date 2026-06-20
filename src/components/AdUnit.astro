@@ -1,0 +1,23 @@
+---
+// A single AdSense ad unit. Place anywhere in page content.
+// Requires the AdSense loader (AdSense.astro) to be present in <head>.
+import { site } from '@/data/site';
+
+interface Props {
+  slot: string;
+  format?: string;
+  responsive?: boolean;
+}
+
+const { slot, format = 'auto', responsive = true } = Astro.props;
+---
+
+<ins
+  class="adsbygoogle"
+  style="display:block"
+  data-ad-client={site.publisherId}
+  data-ad-slot={slot}
+  data-ad-format={format}
+  data-full-width-responsive={responsive ? 'true' : 'false'}
+></ins>
+<script is:inline>{`(adsbygoogle = window.adsbygoogle || []).push({});`}</script>

@@ -75,11 +75,11 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
       <div class="footer-links">
         <a href={site.sourceUrl}>GitHub</a>
         <a href="/legacy-release-notes">Legacy release notes</a>
-        <a href="/sitemap.xml">Sitemap</a>
+        <a href="/sitemap-index.xml">Sitemap</a>
       </div>
     </footer>
     <script>
-      const toggle = document.querySelector('.nav-toggle');
+      const toggle = document.querySelector<HTMLButtonElement>('.nav-toggle');
       const nav = document.getElementById('primary-nav');
       if (toggle && nav) {
         const close = () => {
