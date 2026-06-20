@@ -331,18 +331,20 @@ p {
 }
 
 .compat-list li {
-  padding-left: 28px;
-  position: relative;
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  padding-left: 0;
   color: var(--muted);
 }
 
 .compat-list li::before {
   content: "";
-  position: absolute;
-  left: 0;
-  top: 0.72em;
+  display: block;
   width: 9px;
   height: 9px;
+  margin-top: 0.58em;
   border-radius: 50%;
   background: var(--gold);
 }
