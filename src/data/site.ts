@@ -16,7 +16,6 @@ export const navItems = [
   { href: '/download', label: 'Download' },
   { href: '/screenshots', label: 'Screenshots' },
   { href: '/faq', label: 'FAQ' },
-  { href: '/release-notes', label: 'Release Notes' },
   { href: 'https://github.com/mscrivo/OotD', label: 'GitHub', icon: 'github' },
 ];
 

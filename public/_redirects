@@ -1,4 +1,6 @@
-/node/96 /release-notes 301
+/node/96 /legacy-release-notes 301
+/release-notes /legacy-release-notes 301
+/changelog /legacy-release-notes 301
 /node/103 /download 301
 /node/111 /screenshots 301
 /node/28 /faq 301

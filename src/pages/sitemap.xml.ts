@@ -1,6 +1,6 @@
 import { site } from '@/data/site';
 
-const routes = ['/', '/download', '/screenshots', '/faq', '/release-notes', '/changelog'];
+const routes = ['/', '/download', '/screenshots', '/faq', '/legacy-release-notes'];
 
 export function GET() {
   const updated = new Date().toISOString();
