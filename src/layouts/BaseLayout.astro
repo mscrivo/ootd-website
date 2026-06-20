@@ -30,6 +30,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
   </head>
   <body>
     <header class="site-header">
+      <div class="header-inner">
       <a class="brand" href="/" aria-label="Outlook on the Desktop home">
         <img src="/assets/ootd-logo.svg" alt="" width="48" height="48" />
         <span class="brand-name">
@@ -37,7 +38,12 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
           <span class="brand-name-sub">Outlook on the Desktop</span>
         </span>
       </a>
-      <nav aria-label="Primary navigation">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" aria-label="Primary navigation">
         {
           navItems.map((item) => {
             const isExternal = item.href.startsWith('http');
@@ -56,6 +62,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
           })
         }
       </nav>
+      </div>
     </header>
     <main>
       <slot />
@@ -71,5 +78,28 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
         <a href="/sitemap.xml">Sitemap</a>
       </div>
     </footer>
+    <script>
+      const toggle = document.querySelector('.nav-toggle');
+      const nav = document.getElementById('primary-nav');
+      if (toggle && nav) {
+        const close = () => {
+          nav.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        };
+        toggle.addEventListener('click', () => {
+          const open = nav.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', String(open));
+        });
+        nav.addEventListener('click', (event) => {
+          if ((event.target as HTMLElement).closest('a')) close();
+        });
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && nav.classList.contains('is-open')) {
+            close();
+            toggle.focus();
+          }
+        });
+      }
+    </script>
   </body>
 </html>
