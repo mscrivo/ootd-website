@@ -3,3 +3,8 @@ dist/
 .astro/
 .env
 .DS_Store
+
+# Playwright
+test-results/
+playwright-report/
+playwright/.cache/
