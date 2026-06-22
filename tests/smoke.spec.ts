@@ -12,7 +12,7 @@ test.describe('page smoke tests', () => {
 
     // Features section with all six cards.
     await expect(page.getByRole('heading', { name: 'Features' })).toBeVisible();
-    await expect(page.locator('.feature')).toHaveCount(6);
+    await expect(page.locator('.feature-grid').first().locator('.feature')).toHaveCount(6);
 
     // Primary call to action.
     await expect(page.getByRole('link', { name: /^Download/ }).first()).toBeVisible();

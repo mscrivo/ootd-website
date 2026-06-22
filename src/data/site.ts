@@ -1,3 +1,5 @@
+import type { ImageMetadata } from 'astro';
+
 export const site = {
   name: 'Outlook on the Desktop',
   shortName: 'OotD',
@@ -25,34 +27,44 @@ export const navItems = [
   { href: 'https://github.com/mscrivo/OotD', label: 'GitHub', icon: 'github' },
 ];
 
+// Screenshots live in src/assets so Astro can optimize them (resize + WebP).
+// Resolve each file to its ImageMetadata so pages can pass it to <Image>.
+const screenshotModules = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/screenshots/*.jpg',
+  { eager: true },
+);
+const screenshotByFile = Object.fromEntries(
+  Object.entries(screenshotModules).map(([path, mod]) => [path.split('/').pop(), mod.default]),
+);
+
 export const screenshots = [
   {
-    src: '/assets/screenshots/MonthView.jpg',
+    image: screenshotByFile['MonthView.jpg'],
     alt: 'Outlook on the Desktop month view displayed on the Windows desktop',
     title: 'Month view',
   },
   {
-    src: '/assets/screenshots/WeekView.jpg',
+    image: screenshotByFile['WeekView.jpg'],
     alt: 'Outlook on the Desktop week view',
     title: 'Week view',
   },
   {
-    src: '/assets/screenshots/MultipleInstances.jpg',
+    image: screenshotByFile['MultipleInstances.jpg'],
     alt: 'Multiple Outlook on the Desktop instances running at once',
     title: 'Multiple instances',
   },
   {
-    src: '/assets/screenshots/Instance-Management.jpg',
+    image: screenshotByFile['Instance-Management.jpg'],
     alt: 'Instance management window in Outlook on the Desktop',
     title: 'Instance management',
   },
   {
-    src: '/assets/screenshots/ControlBar_0.jpg',
+    image: screenshotByFile['ControlBar_0.jpg'],
     alt: 'Outlook on the Desktop control bar',
     title: 'Control bar',
   },
   {
-    src: '/assets/screenshots/TrayMenu.jpg',
+    image: screenshotByFile['TrayMenu.jpg'],
     alt: 'Outlook on the Desktop tray menu',
     title: 'Tray menu',
   },

@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { screenshots } from '@/data/site';
 ---
@@ -19,7 +20,7 @@ import { screenshots } from '@/data/site';
     {
       screenshots.map((screenshot) => (
         <article class="screenshot">
-          <img src={screenshot.src} alt={screenshot.alt} loading="lazy" width="1200" height="750" />
+          <Image src={screenshot.image} alt={screenshot.alt} loading="lazy" format="webp" />
           <h3>{screenshot.title}</h3>
         </article>
       ))

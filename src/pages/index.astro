@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { features, screenshots, site } from '@/data/site';
 
@@ -68,7 +69,13 @@ const structuredData = {
       </p>
     </div>
     <div class="product-shot">
-      <img src={screenshots[0].src} alt={screenshots[0].alt} width="1200" height="750" />
+      <Image
+        src={screenshots[0].image}
+        alt={screenshots[0].alt}
+        format="webp"
+        loading="eager"
+        fetchpriority="high"
+      />
     </div>
   </section>
 
@@ -90,6 +97,54 @@ const structuredData = {
           </article>
         ))
       }
+    </div>
+  </section>
+
+  <section class="section how-to">
+    <h2 class="section-title">How to put Outlook on your desktop</h2>
+    <p class="lead">
+      Outlook on the Desktop turns your Microsoft Outlook calendar into a desktop calendar widget
+      for Windows — a live month, week, or day view pinned to your wallpaper so your schedule is
+      always in sight. Here is how to get your calendar on the desktop in three steps.
+    </p>
+    <div class="feature-grid">
+      <article class="feature">
+        <div class="feature-head">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path d={iconPaths.calendar}></path></svg>
+          </span>
+          <h3>1. Install in seconds</h3>
+        </div>
+        <p>
+          Download the installer and run it. Setup fetches the required .NET runtime for you if it
+          is not already on your PC, so there is nothing else to configure.
+        </p>
+      </article>
+      <article class="feature">
+        <div class="feature-head">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path d={iconPaths.pin}></path></svg>
+          </span>
+          <h3>2. Pin Outlook to the desktop</h3>
+        </div>
+        <p>
+          OotD hosts the Outlook Classic view directly on your desktop, behind your other windows,
+          so your calendar, inbox, tasks, and notes stay visible without opening the full Outlook
+          app.
+        </p>
+      </article>
+      <article class="feature">
+        <div class="feature-head">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path d={iconPaths.monitor}></path></svg>
+          </span>
+          <h3>3. Size it to your screens</h3>
+        </div>
+        <p>
+          Drag, resize, and set the opacity to taste, then place separate instances across multiple
+          monitors. Your layout is saved when you exit, so it returns exactly how you left it.
+        </p>
+      </article>
     </div>
   </section>
 

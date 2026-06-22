@@ -232,6 +232,11 @@ nav a.is-icon svg {
   margin: 0 auto;
 }
 
+/* Let the intro paragraph span the full section width instead of the 620px cap. */
+.how-to .lead {
+  max-width: none;
+}
+
 .hero {
   min-height: auto;
   display: grid;
