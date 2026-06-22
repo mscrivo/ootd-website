@@ -20,6 +20,10 @@ const iconPaths: Record<string, string> = {
     'M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z',
   list: 'M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z',
   warning: 'M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z',
+  clock:
+    'M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z',
+  ruler:
+    'M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 10H3V8h2v4h2V8h2v4h2V8h2v4h2V8h2v4h2V8h2v8z',
 };
 
 const structuredData = {
@@ -111,7 +115,7 @@ const structuredData = {
       <article class="feature">
         <div class="feature-head">
           <span class="feature-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" focusable="false"><path d={iconPaths.calendar}></path></svg>
+            <svg viewBox="0 0 24 24" focusable="false"><path d={iconPaths.clock}></path></svg>
           </span>
           <h3>1. Install in seconds</h3>
         </div>
@@ -136,7 +140,7 @@ const structuredData = {
       <article class="feature">
         <div class="feature-head">
           <span class="feature-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" focusable="false"><path d={iconPaths.monitor}></path></svg>
+            <svg viewBox="0 0 24 24" focusable="false"><path d={iconPaths.ruler}></path></svg>
           </span>
           <h3>3. Size it to your screens</h3>
         </div>
