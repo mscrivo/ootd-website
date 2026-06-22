@@ -20,9 +20,35 @@ const iconPaths: Record<string, string> = {
   list: 'M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z',
   warning: 'M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z',
 };
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: site.name,
+  alternateName: site.shortName,
+  description: site.description,
+  url: site.url,
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'Windows',
+  softwareVersion: site.latestVersion,
+  datePublished: site.releaseDate,
+  downloadUrl: site.downloadUrl,
+  softwareRequirements: 'Microsoft Outlook Classic (2010 or higher)',
+  image: new URL(site.ogImage, site.url).toString(),
+  author: {
+    '@type': 'Person',
+    name: 'Michael Scrivo',
+    url: 'https://michaelscrivo.com/',
+  },
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+  },
+};
 ---
 
-<BaseLayout>
+<BaseLayout structuredData={structuredData}>
   <section class="hero">
     <div>
       <p class="eyebrow">Windows utility for Outlook Classic</p>

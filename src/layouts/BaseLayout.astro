@@ -6,11 +6,29 @@ import '@/styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  /** Absolute or root-relative URL for the social-share image. */
+  image?: string;
+  /** One or more JSON-LD objects to emit as <script type="application/ld+json">. */
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const { title, description = site.description } = Astro.props;
+const { title, description = site.description, image = site.ogImage, structuredData } = Astro.props;
 const pageTitle = title ? `${title} | ${site.name}` : site.name;
-const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+// `build.format: 'file'` makes pathnames end in `.html` (e.g. `/download.html`)
+// at build time, while dev serves clean URLs. Normalize both to the clean path
+// Caddy actually serves so canonical/og:url and nav active-state stay correct.
+const currentPath =
+  Astro.url.pathname
+    .replace(/index\.html$/, '')
+    .replace(/\.html$/, '')
+    .replace(/\/$/, '') || '/';
+const canonicalUrl = new URL(currentPath, site.url).toString();
+const imageUrl = new URL(image, site.url).toString();
+const jsonLd = structuredData
+  ? Array.isArray(structuredData)
+    ? structuredData
+    : [structuredData]
+  : [];
 ---
 
 <!doctype html>
@@ -20,12 +38,29 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
+    <meta name="author" content="Michael Scrivo" />
+    <meta name="theme-color" content={site.themeColor} />
+    <link rel="canonical" href={canonicalUrl} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={new URL(Astro.url.pathname, site.url).toString()} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:width" content={String(site.ogImageWidth)} />
+    <meta property="og:image:height" content={String(site.ogImageHeight)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
     <link rel="icon" type="image/svg+xml" href="/assets/ootd-logo.svg" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
+    {
+      jsonLd.map((data) => (
+        <script is:inline type="application/ld+json" set:html={JSON.stringify(data)} />
+      ))
+    }
     <AdSense />
     <script
       is:inline

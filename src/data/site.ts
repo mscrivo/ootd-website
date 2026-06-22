@@ -10,6 +10,11 @@ export const site = {
   downloadUrl: 'https://github.com/mscrivo/OotD/releases/download/5.1.0/ootd-5.1.0.exe',
   releasesUrl: 'https://github.com/mscrivo/OotD/releases',
   sourceUrl: 'https://github.com/mscrivo/OotD',
+  // Social-share card generated from the logo by scripts/generate-og-image.mjs.
+  ogImage: '/assets/og-card.png',
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  themeColor: '#1f7a8c',
 };
 
 export const navItems = [

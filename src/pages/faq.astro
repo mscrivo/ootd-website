@@ -1,9 +1,26 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { faqs } from '@/data/site';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
 ---
 
-<BaseLayout title="FAQ" description="Frequently asked questions about Outlook on the Desktop.">
+<BaseLayout
+  title="FAQ"
+  description="Frequently asked questions about Outlook on the Desktop."
+  structuredData={structuredData}
+>
   <section class="page-header">
     <p class="eyebrow">Support</p>
     <h1>Frequently Asked Questions</h1>

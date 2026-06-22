@@ -14,6 +14,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test:e2e": "playwright test",
+    "og:image": "node scripts/generate-og-image.mjs",
     "prepare": "husky"
   },
   "lint-staged": {
