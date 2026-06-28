@@ -35,7 +35,7 @@ importers:
         version: 10.5.0
       eslint-plugin-astro:
         specifier: ^2.0.0
-        version: 2.1.0(@typescript-eslint/parser@8.62.0(eslint@10.5.0)(typescript@6.0.3))(eslint@10.5.0)
+        version: 2.1.1(@typescript-eslint/parser@8.62.0(eslint@10.5.0)(typescript@6.0.3))(eslint@10.5.0)
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -1397,8 +1397,8 @@ packages:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
 
-  eslint-plugin-astro@2.1.0:
-    resolution: {integrity: sha512-ESP/lBX4dD0ZdEQ2e0eQzk+SfhsR0BS3ataSlL/WZ7Rw3nUv1xlGZiZmHDsKbvi/7OLWp+jLqBvDU+Ueuv8cwg==}
+  eslint-plugin-astro@2.1.1:
+    resolution: {integrity: sha512-oZwtjIfBOxOJT09exeGLQWy5o8/ATxY8RSq0548VMd0q7FqIVxoA5a46fRjnVLrj3pd3aP3/zkrGTuYPPo+iSw==}
     engines: {node: ^22.22.3 || ^24.16.0 || >=26.3.0}
     peerDependencies:
       '@typescript-eslint/parser': '>=8.61.0'
@@ -3822,7 +3822,7 @@ snapshots:
 
   escape-string-regexp@4.0.0: {}
 
-  eslint-plugin-astro@2.1.0(@typescript-eslint/parser@8.62.0(eslint@10.5.0)(typescript@6.0.3))(eslint@10.5.0):
+  eslint-plugin-astro@2.1.1(@typescript-eslint/parser@8.62.0(eslint@10.5.0)(typescript@6.0.3))(eslint@10.5.0):
     dependencies:
       '@eslint-community/eslint-utils': 4.9.1(eslint@10.5.0)
       '@jridgewell/sourcemap-codec': 1.5.5
