@@ -1,5 +1,21 @@
 # OotD Release Notes
 
+## 5.1.1
+
+### Important
+
+- Windows SmartScreen will flag this new version as an unknown publisher, because I've given up on code signing since it's become way to expensive and cumbersome to maintain.
+- OotD only works with Outlook Classic, not the "new" Outlook that Microsoft is pushing on everyone. If you have the "new" Outlook, you will need to switch back to the classic version to use OotD.
+
+Fixes:
+
+- Fixed issue where clicking the calendar date icons (goto today, next month, etc.) would crash in non-English locales
+
+Internal Tooling:
+
+- Lots of internal build changes to make the project easier to work with
+- Updated NLog to 6.1.4 and the vstest dependencies
+
 ## 5.1.0
 
 ### Important
