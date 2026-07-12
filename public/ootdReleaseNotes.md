@@ -1,5 +1,21 @@
 # OotD Release Notes
 
+## 5.2.0
+
+### Important
+
+- Windows SmartScreen will flag this new version as an unknown publisher, because I've given up on code signing since it's become way to expensive and cumbersome to maintain.
+- OotD only works with Outlook Classic, not the "new" Outlook that Microsoft is pushing on everyone. If you have the "new" Outlook, you will need to switch back to the classic version to use OotD.
+
+Fixes:
+
+- Fixed startup hang that could occur when Outlook's RPC server returned unexpected errors during initialization
+- Fixed false "program is already running" error that appeared when restarting the app after reassigning an instance to a different virtual desktop
+- Fixed loss of saved window opacity on locales that use a comma as the decimal separator (e.g. German) when the system locale changed
+- Fixed a slow GDI handle leak caused by the tray icon rebuilding every second
+- Fixed possible crash when opening an instance's context menu immediately after renaming or removing an instance
+- Exiting from an instance's context menu now saves the current view settings, matching the tray menu's exit behavior
+
 ## 5.1.1
 
 ### Important
