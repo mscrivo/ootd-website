@@ -5,7 +5,7 @@ The web site for [outlookonthedesktop.com](https://outlookonthedesktop.com), a s
 
 ## Tech stack
 
-- **Astro** (static output) + **TypeScript**
+- **Astro** (static output) + **TypeScript 7** (native compiler)
 - **pnpm** for package management, **mise** for pinning Node/pnpm versions
 - **ESLint** + **Prettier** for linting/formatting
 - **Playwright** for end-to-end tests
@@ -48,3 +48,15 @@ pnpm dev            # start the dev server
 - **Pre-commit** (husky + lint-staged): formats and lints staged files, then runs `astro check`.
 - **CI** (`.github/workflows/ci.yml`) on push to `main` and PRs: Prettier check → ESLint → type check → build → Playwright e2e.
 - **Renovate** (`renovate.json`): opens dependency-update PRs (minimum release age of 3 days) and automerges them once CI passes.
+
+## TypeScript 7 note
+
+TypeScript 7 (the native compiler) does not yet ship a programmatic compiler API — that
+lands in 7.1. Tooling that needs the API (`typescript-eslint`, `astro check`, and the
+editor language server) therefore still runs against the 6.x API, installed side-by-side
+per the [TS 7.0 announcement](https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/):
+
+- `@typescript/native` — aliased to `typescript@7`; provides the native `tsc`.
+- `typescript` — aliased to `@typescript/typescript6`; the 6.x compiler API tools resolve, and its `tsc6` binary.
+
+Once those tools support the 7.1 API, drop the alias and depend on `typescript@7` directly.
