@@ -1,6 +1,6 @@
 [tools]
 node = "24"
-pnpm = "11.19"
+pnpm = "11.20"
 
 [tasks.install]
 description = "Install project dependencies"
