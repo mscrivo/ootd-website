@@ -5,6 +5,7 @@
   "automerge": true,
   "platformAutomerge": true,
   "dependencyDashboard": true,
+  "postUpdateOptions": ["pnpmDedupe"],
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true
