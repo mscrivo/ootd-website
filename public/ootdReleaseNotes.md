@@ -1,5 +1,19 @@
 # OotD Release Notes
 
+## 5.3.0
+
+### Important
+
+- The app is now signed by signpath.io, however Windows SmartScreen may still flag this version as an unknown publisher for some time until it passes Microsoft's reputation gate.
+- OotD only works with Outlook Classic, not the "new" Outlook that Microsoft is pushing on everyone. If you have the "new" Outlook, you will need to switch back to the classic version to use OotD.
+
+Fixes:
+
+- Windows are now properly pinned to the desktop so they stay behind other applications always
+  - Note: Win-D (Show Desktop) will still hide the windows, but they will reappear when you restore the desktop
+- Re-added code signing thanks to signpath.io!
+- Updated to latest dotnet SDK & Runtimes
+
 ## 5.2.0
 
 ### Important
