@@ -36,6 +36,19 @@ const jsonLd = structuredData
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script is:inline>
+      // Apply the stored theme (or system preference) before first paint to avoid a flash.
+      (() => {
+        const stored = localStorage.getItem('ootd-theme');
+        const theme =
+          stored === 'light' || stored === 'dark'
+            ? stored
+            : window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light';
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Michael Scrivo" />
@@ -118,6 +131,17 @@ const jsonLd = structuredData
             })
           }
         </nav>
+        <button class="theme-toggle" type="button" aria-label="Toggle color theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path
+              d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+            ></path>
+          </svg>
+        </button>
       </div>
     </header>
     <main>
@@ -154,6 +178,14 @@ const jsonLd = structuredData
             close();
             toggle.focus();
           }
+        });
+      }
+      const themeToggle = document.querySelector<HTMLButtonElement>('.theme-toggle');
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+          document.documentElement.dataset.theme = next;
+          localStorage.setItem('ootd-theme', next);
         });
       }
     </script>
