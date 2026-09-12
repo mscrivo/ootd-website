@@ -17,13 +17,11 @@ import { screenshots } from '@/data/site';
   </section>
 
   <section class="section screenshot-grid">
-    {
-      screenshots.map((screenshot) => (
-        <article class="screenshot">
-          <Image src={screenshot.image} alt={screenshot.alt} loading="lazy" format="webp" />
-          <h3>{screenshot.title}</h3>
-        </article>
-      ))
-    }
+    {screenshots.map((screenshot) => (
+      <article class="screenshot">
+        <Image src={screenshot.image} alt={screenshot.alt} loading="lazy" format="webp" />
+        <h3>{screenshot.title}</h3>
+      </article>
+    ))}
   </section>
 </BaseLayout>

@@ -63,13 +63,16 @@ const structuredData = {
         desktop without opening the full Outlook window.
       </p>
       <div class="actions">
-        <a class="button" href={site.downloadUrl}>Download Installer</a>
-        <a class="button secondary" href="/screenshots">View screenshots</a>
+        <a class="button" href={site.downloadUrl}>
+          Download Installer
+        </a>
+        <a class="button secondary" href="/screenshots">
+          View screenshots
+        </a>
       </div>
       <p class="release-meta">
-        Latest release {site.latestVersion} &middot; <time datetime={site.releaseDate}
-          >{releaseDate}</time
-        >
+        Latest release {site.latestVersion} &middot;{' '}
+        <time datetime={site.releaseDate}>{releaseDate}</time>
       </p>
     </div>
     <div class="product-shot">
@@ -86,21 +89,19 @@ const structuredData = {
   <section class="section">
     <h2 class="section-title">Features</h2>
     <div class="feature-grid">
-      {
-        features.map((feature) => (
-          <article class="feature">
-            <div class="feature-head">
-              <span class="feature-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" focusable="false">
-                  <path d={iconPaths[feature.icon]} />
-                </svg>
-              </span>
-              <h3>{feature.title}</h3>
-            </div>
-            <p>{feature.description}</p>
-          </article>
-        ))
-      }
+      {features.map((feature) => (
+        <article class="feature">
+          <div class="feature-head">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d={iconPaths[feature.icon]} />
+              </svg>
+            </span>
+            <h3>{feature.title}</h3>
+          </div>
+          <p>{feature.description}</p>
+        </article>
+      ))}
     </div>
   </section>
 
@@ -115,7 +116,9 @@ const structuredData = {
       <article class="feature">
         <div class="feature-head">
           <span class="feature-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" focusable="false"><path d={iconPaths.clock}></path></svg>
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d={iconPaths.clock}></path>
+            </svg>
           </span>
           <h3>1. Install in seconds</h3>
         </div>
@@ -127,7 +130,9 @@ const structuredData = {
       <article class="feature">
         <div class="feature-head">
           <span class="feature-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" focusable="false"><path d={iconPaths.pin}></path></svg>
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d={iconPaths.pin}></path>
+            </svg>
           </span>
           <h3>2. Pin Outlook to the desktop</h3>
         </div>
@@ -140,7 +145,9 @@ const structuredData = {
       <article class="feature">
         <div class="feature-head">
           <span class="feature-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" focusable="false"><path d={iconPaths.ruler}></path></svg>
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d={iconPaths.ruler}></path>
+            </svg>
           </span>
           <h3>3. Size it to your screens</h3>
         </div>
@@ -163,7 +170,9 @@ const structuredData = {
     <div class="callout">
       <h3 class="callout-title">
         <span class="callout-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" focusable="false"><path d={iconPaths.warning}></path></svg>
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d={iconPaths.warning}></path>
+          </svg>
         </span>
         Important compatibility note
       </h3>
