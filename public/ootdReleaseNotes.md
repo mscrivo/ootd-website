@@ -1,5 +1,34 @@
 # OotD Release Notes
 
+## 5.5.0
+
+### Important
+
+- OotD only works with Outlook Classic, not the "new" Outlook that Microsoft is pushing on everyone. If you have the "new" Outlook, you will need to switch back to the classic version to use OotD.
+
+New:
+
+- Dark mode: OotD now follows the Windows light/dark app setting for its tray menu, header bar, instance manager and dialogs
+  - Note: the Outlook calendar and mail content is drawn by Outlook itself and stays light
+
+Changes:
+
+- Redesigned the New Email button icon so it's clearly visible on both light and dark header bars
+- Slimmed the window border
+- The top edge and top corners of a window are now easier to grab for resizing
+- Startup errors now explain what went wrong and how to fix it, instead of showing a raw error:
+  - If only the new Outlook for Windows is installed, OotD now says that classic Outlook is required
+  - If Outlook can't be started (for example, because Outlook or OotD is running as administrator), OotD explains how to resolve it
+  - If Outlook's components are damaged or not registered, OotD explains how to repair Office
+  - If Outlook is switched to the new Outlook, startup errors say to turn off the "New Outlook" toggle
+  - These messages are translated into German, French, Italian, Spanish, Japanese, Portuguese (Brazil) and Chinese (Simplified)
+
+Fixes:
+
+- A window whose saved folder no longer exists (for example, after removing an account) now falls back to the default calendar instead of failing to load
+- The transparency slider in the header bar is no longer cut off at 100% display scaling
+- Reviewed all translations and filled in text that was still showing in English
+
 ## 5.3.0
 
 ### Important

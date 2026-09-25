@@ -24,8 +24,9 @@ const releaseDate = new Date(site.releaseDate).toLocaleDateString('en-US', {
     <div class="callout">
       <h2>Current version</h2>
       <p>
-        Download OotD {site.latestVersion}. Windows SmartScreen may flag the app as an unknown
-        publisher because current builds are not code signed.
+        Download OotD {site.latestVersion}. The installer is code signed through SignPath
+        Foundation, but Windows SmartScreen may still warn about a new release until it builds up
+        download reputation.
       </p>
       <div class="actions">
         <a class="button" href={site.downloadUrl}>
