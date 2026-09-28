@@ -1,5 +1,18 @@
 # OotD Release Notes
 
+## 5.5.1
+
+### Important
+
+- OotD only works with Outlook Classic, not the "new" Outlook that Microsoft is pushing on everyone. If you have the "new" Outlook, you will need to switch back to the classic version to use OotD.
+
+Fixes:
+
+- Outlook no longer pops up a window when OotD starts with some add-ins installed (for example, CalDAV Synchronizer), and closing that window no longer makes OotD report that Outlook isn't running
+- Updating OotD no longer overwrites a customised "Outlook on the Desktop" startup task
+- Windows now stay behind other applications as intended; the desktop pinning helper was never actually being created
+- A window no longer stays on top of other applications after closing an Outlook right-click menu
+
 ## 5.5.0
 
 ### Important
