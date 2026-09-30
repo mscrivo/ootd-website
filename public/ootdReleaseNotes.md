@@ -1,5 +1,19 @@
 # OotD Release Notes
 
+## 5.6.0
+
+### Important
+
+- OotD only works with Outlook Classic, not the "new" Outlook that Microsoft is pushing on everyone. If you have the "new" Outlook, you will need to switch back to the classic version to use OotD.
+
+Security:
+
+- The updater now checks that a downloaded update is signed by OotD's publisher and refuses to install it if it isn't
+
+Fixes:
+
+- Calendar views now use the time scale set in Outlook (for example, 15 minute increments) instead of always showing 30 minute slots
+
 ## 5.5.1
 
 ### Important
