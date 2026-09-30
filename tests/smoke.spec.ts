@@ -55,6 +55,11 @@ test.describe('page smoke tests', () => {
     // The markdown file's own h1 is stripped so the page has a single h1.
     await expect(page.getByRole('heading', { level: 1 })).toHaveCount(1);
     await expect(page.getByRole('heading', { level: 2, name: '3.0.0' })).toBeVisible();
+    // This page is the only place that links to the legacy notes.
+    await expect(page.getByRole('link', { name: 'legacy release notes' })).toHaveAttribute(
+      'href',
+      '/legacy-release-notes',
+    );
   });
 
   test('legacy release notes page renders the history', async ({ page }) => {

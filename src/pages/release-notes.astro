@@ -25,20 +25,21 @@ const releaseNotesHtml = (await compiledContent()).replace(/^\s*<h1[^>]*>.*?<\/h
   <section class="section split">
     <div class="callout">
       <h2>Get the latest version</h2>
-      <p>
-        Download OotD {site.latestVersion} from the download page. The legacy release notes page has
-        the original notes for releases going back to 1.0.
-      </p>
+      <p>Download OotD {site.latestVersion} from the download page.</p>
       <div class="actions">
         <a class="button" href="/download">
           Download {site.latestVersion}
-        </a>
-        <a class="button secondary" href="/legacy-release-notes">
-          Legacy release notes
         </a>
       </div>
     </div>
   </section>
 
   <section class="section release-notes" set:html={releaseNotesHtml} />
+
+  <section class="section">
+    <p class="lead">
+      Looking for older releases? The <a href="/legacy-release-notes">legacy release notes</a> have
+      the original notes going back to 1.0.
+    </p>
+  </section>
 </BaseLayout>
