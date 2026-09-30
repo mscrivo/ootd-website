@@ -39,7 +39,12 @@ const jsonLd = structuredData
     <script is:inline>
       // Apply the stored theme (or system preference) before first paint to avoid a flash.
       (() => {
-        const stored = localStorage.getItem('ootd-theme');
+        let stored = null;
+        try {
+          stored = localStorage.getItem('ootd-theme');
+        } catch {
+          // Storage can be blocked by privacy settings; fall back to the system preference.
+        }
         const theme =
           stored === 'light' || stored === 'dark'
             ? stored
@@ -151,7 +156,7 @@ const jsonLd = structuredData
       </div>
       <div class="footer-links">
         <a href={site.sourceUrl}>GitHub</a>
-        <a href="/legacy-release-notes">Legacy release notes</a>
+        <a href="/release-notes">Release notes</a>
         <a href="/sitemap-index.xml">Sitemap</a>
       </div>
     </footer>
@@ -182,7 +187,11 @@ const jsonLd = structuredData
         themeToggle.addEventListener('click', () => {
           const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
           document.documentElement.dataset.theme = next;
-          localStorage.setItem('ootd-theme', next);
+          try {
+            localStorage.setItem('ootd-theme', next);
+          } catch {
+            // Storage blocked: the theme still applies for this page view.
+          }
         });
       }
     </script>

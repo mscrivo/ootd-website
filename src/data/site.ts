@@ -39,6 +39,11 @@ const screenshotByFile = Object.fromEntries(
 
 export const screenshots = [
   {
+    image: screenshotByFile['DarkMode.jpg'],
+    alt: 'Outlook on the Desktop in dark mode, showing a month calendar and a notes window over the desktop wallpaper',
+    title: 'Dark mode',
+  },
+  {
     image: screenshotByFile['MonthView.jpg'],
     alt: 'Outlook on the Desktop month view displayed on the Windows desktop',
     title: 'Month view',
@@ -136,7 +141,7 @@ export const faqs: FaqItem[] = [
   {
     question: 'Which versions of Windows does OotD run on?',
     answer:
-      'The current 5.x releases target modern Windows versions and Outlook Classic. Older versions remain available from GitHub releases for legacy systems, and very old releases (3.1 and earlier) even supported Windows XP.',
+      'The current 5.x releases run on Windows 10 and 11 with Outlook Classic. Older versions remain available from GitHub releases for legacy systems, and very old releases (3.1 and earlier) even supported Windows XP.',
   },
   {
     question: 'Does OotD work with the new Outlook?',
@@ -185,19 +190,19 @@ export const faqs: FaqItem[] = [
       'This stems from a change in how newer Outlook versions shut down their background session. Launching Outlook on its own before starting OotD generally avoids it.',
   },
   {
-    question: "I'm using Outlook 2010 and I can't click the Calendar when using OotD.",
+    question: 'Show Desktop (Windows Key + D) hides OotD too. How can I fix this?',
     answer:
-      'This was a Microsoft bug in the original Outlook 2010 release. Installing Office 2010 SP1 (or a later update) resolves it.',
-  },
-  {
-    question: 'Show Desktop in Windows Vista and Windows 7 hides OotD too. How can I fix this?',
-    answer:
-      'Use Windows Key + M to minimize your other windows instead of Show Desktop. Show Desktop minimizes OotD as well, and Windows no longer provides a built-in way to exclude it.',
+      "Windows hides everything on Show Desktop, including OotD, and doesn't provide a way to exclude it. OotD comes back when you restore the desktop. To uncover the desktop while keeping OotD visible, use Windows Key + M to minimize your other windows instead.",
   },
   {
     question: 'How do I uninstall Outlook on the Desktop?',
     answer:
       'Exit OotD from the tray icon first (right-click the icon and choose Exit), then uninstall it from Windows Apps & Features (or Add/Remove Programs on older Windows).',
+  },
+  {
+    question: "I'm using Outlook 2010 and I can't click the Calendar when using OotD.",
+    answer:
+      'This was a Microsoft bug in the original Outlook 2010 release. Installing Office 2010 SP1 (or a later update) resolves it.',
   },
   {
     question: "I've found a bug. How do I contact the author?",

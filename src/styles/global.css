@@ -450,11 +450,20 @@ p {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+/* The lead screenshot spans the full row, keeping the two-column grid even. */
+.screenshot-grid .screenshot:first-child {
+  grid-column: 1 / -1;
+}
+
+.screenshot-grid .screenshot:first-child img {
+  aspect-ratio: auto;
+}
+
 .feature,
 .screenshot,
 .callout,
 .faq-item,
-.release-panel {
+.release-notes {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
@@ -464,7 +473,7 @@ p {
 .feature,
 .callout,
 .faq-item,
-.release-panel {
+.release-notes {
   padding: 24px;
 }
 
@@ -579,21 +588,22 @@ p {
   background: var(--gold);
 }
 
-.release-panel :global(h2),
-.release-panel h2 {
+.release-notes h2 {
   font-size: 1.65rem;
   margin-top: 28px;
 }
 
-.release-panel :global(h3),
-.release-panel h3 {
+.release-notes h3 {
   font-size: 1.15rem;
   margin-top: 22px;
 }
 
-.release-panel :global(li),
-.release-panel li {
+.release-notes li {
   line-height: 1.65;
+}
+
+.release-notes h2:first-child {
+  margin-top: 0;
 }
 
 .legacy-release-notes {
@@ -747,7 +757,7 @@ p {
   .feature,
   .callout,
   .faq-item,
-  .release-panel {
+  .release-notes {
     padding: 18px;
   }
 

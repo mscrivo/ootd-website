@@ -10,7 +10,7 @@ test.describe('page smoke tests', () => {
     // Logo loads in the header.
     await expect(page.locator('.brand img')).toBeVisible();
 
-    // Features section with all six cards.
+    // Features section with all nine cards.
     await expect(page.getByRole('heading', { name: 'Features' })).toBeVisible();
     await expect(page.locator('.feature-grid').first().locator('.feature')).toHaveCount(9);
 
@@ -32,7 +32,9 @@ test.describe('page smoke tests', () => {
     await page.goto('/screenshots');
 
     await expect(page.getByRole('heading', { level: 1 })).toHaveText('Screenshots');
-    await expect(page.locator('.screenshot')).toHaveCount(6);
+    await expect(page.locator('.screenshot')).toHaveCount(7);
+    // Each cropped thumbnail links to its full-size image.
+    await expect(page.locator('.screenshot a[href$=".webp"]')).toHaveCount(7);
   });
 
   test('faq page lists every question and links to GitHub issues', async ({ page }) => {
@@ -44,6 +46,15 @@ test.describe('page smoke tests', () => {
       'href',
       'https://github.com/mscrivo/OotD/issues',
     );
+  });
+
+  test('release notes page renders the changelog from the update feed notes', async ({ page }) => {
+    await page.goto('/release-notes');
+
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText('Release Notes');
+    // The markdown file's own h1 is stripped so the page has a single h1.
+    await expect(page.getByRole('heading', { level: 1 })).toHaveCount(1);
+    await expect(page.getByRole('heading', { level: 2, name: '3.0.0' })).toBeVisible();
   });
 
   test('legacy release notes page renders the history', async ({ page }) => {

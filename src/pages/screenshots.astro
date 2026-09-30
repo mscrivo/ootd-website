@@ -1,7 +1,13 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { screenshots } from '@/data/site';
+
+// Thumbnails are cropped to a uniform 16:10 grid, so each one links to the uncropped
+// full-size image.
+const fullSize = await Promise.all(
+  screenshots.map((screenshot) => getImage({ src: screenshot.image, format: 'webp' })),
+);
 ---
 
 <BaseLayout
@@ -17,9 +23,11 @@ import { screenshots } from '@/data/site';
   </section>
 
   <section class="section screenshot-grid">
-    {screenshots.map((screenshot) => (
+    {screenshots.map((screenshot, index) => (
       <article class="screenshot">
-        <Image src={screenshot.image} alt={screenshot.alt} loading="lazy" format="webp" />
+        <a href={fullSize[index].src} title="View full size">
+          <Image src={screenshot.image} alt={screenshot.alt} loading="lazy" format="webp" />
+        </a>
         <h3>{screenshot.title}</h3>
       </article>
     ))}

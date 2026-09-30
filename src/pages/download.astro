@@ -32,6 +32,9 @@ const releaseDate = new Date(site.releaseDate).toLocaleDateString('en-US', {
         <a class="button" href={site.downloadUrl}>
           Download installer
         </a>
+        <a class="button secondary" href="/release-notes">
+          What's new
+        </a>
         <a class="button secondary" href={site.releasesUrl}>
           All releases
         </a>
@@ -41,7 +44,7 @@ const releaseDate = new Date(site.releaseDate).toLocaleDateString('en-US', {
       <h2>Requirements</h2>
       <ul class="compat-list">
         <li>Microsoft Outlook Classic (2010 or higher) is required.</li>
-        <li>Windows 10 (Windows 7 and XP support is available in older releases)</li>
+        <li>Windows 10 or 11 (Windows 7 and XP support is available in older releases)</li>
         <li>
           Microsoft .NET 10 (The setup program will download and install it for you if you don't
           have it)

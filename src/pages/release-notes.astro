@@ -1,0 +1,44 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { site } from '@/data/site';
+// The same file the desktop app fetches for its update dialog, so the page and
+// the in-app notes never drift apart. It lives in public/, outside the @/ alias.
+import { compiledContent } from '../../public/ootdReleaseNotes.md';
+
+// The file opens with its own "# OotD Release Notes" heading; the page header
+// below supplies the h1 instead.
+const releaseNotesHtml = (await compiledContent()).replace(/^\s*<h1[^>]*>.*?<\/h1>/s, '');
+---
+
+<BaseLayout
+  title="Release Notes"
+  description="What's new in each release of Outlook on the Desktop, from 3.0 to the latest version."
+>
+  <section class="page-header">
+    <p class="eyebrow">Changelog</p>
+    <h1>Release Notes</h1>
+    <p class="lead">
+      What changed in each OotD release, newest first. The current version is {site.latestVersion}.
+    </p>
+  </section>
+
+  <section class="section split">
+    <div class="callout">
+      <h2>Get the latest version</h2>
+      <p>
+        Download OotD {site.latestVersion} from the download page. The legacy release notes page has
+        the original notes for releases going back to 1.0.
+      </p>
+      <div class="actions">
+        <a class="button" href="/download">
+          Download {site.latestVersion}
+        </a>
+        <a class="button secondary" href="/legacy-release-notes">
+          Legacy release notes
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section release-notes" set:html={releaseNotesHtml} />
+</BaseLayout>

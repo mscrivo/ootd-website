@@ -12,7 +12,8 @@ import { site } from '@/data/site';
     <p class="eyebrow">Changelog</p>
     <h1>Legacy Release Notes</h1>
     <p class="lead">
-      Release notes for older versions of OotD. Changelogs for newer releases live on GitHub.
+      Release notes for older versions of OotD. Notes for 3.0 and later are on the release notes
+      page.
     </p>
   </section>
 
@@ -20,15 +21,14 @@ import { site } from '@/data/site';
     <div class="callout">
       <h2>Looking for the latest version?</h2>
       <p>
-        The current release and its changelog are on the download page. Newer release changelogs are
-        maintained on GitHub.
+        The current release is on the download page, and its changes are on the release notes page.
       </p>
       <div class="actions">
         <a class="button" href="/download">
           Download {site.latestVersion}
         </a>
-        <a class="button secondary" href={site.releasesUrl}>
-          GitHub releases
+        <a class="button secondary" href="/release-notes">
+          Release notes
         </a>
       </div>
     </div>
