@@ -83,15 +83,28 @@ export const features = [
     description: 'The calendar is pinned to your desktop so no windows can get stuck behind it.',
   },
   {
+    icon: 'moon',
+    title: 'Dark mode',
+    description:
+      'Follows your Windows light/dark setting for the header bar, tray menu, and dialogs.',
+  },
+  {
     icon: 'gear',
     title: 'Customizable',
-    description: "The calendar's position, size, and opacity are all easily adjustable.",
+    description:
+      "The calendar's position, size, and opacity are all easily adjustable, and calendar views use the time scale you've set in Outlook.",
   },
   {
     icon: 'monitor',
     title: 'HiDPI & multi-monitor support',
     description:
       'Full HiDPI and multi-monitor support lets you place instances across all of your screens.',
+  },
+  {
+    icon: 'stack',
+    title: 'Multiple instances',
+    description:
+      'Run several calendar, inbox, or task windows at once and assign each one to its own virtual desktop.',
   },
   {
     icon: 'calendar',
@@ -104,6 +117,12 @@ export const features = [
     title: 'Use any Outlook view',
     description:
       'Switch between any Outlook view, including calendar, inbox, contacts, tasks, and notes.',
+  },
+  {
+    icon: 'shield',
+    title: 'Signed & self-updating',
+    description:
+      'Code signed, with built-in updates that are verified before they install and relaunch the app automatically.',
   },
 ];
 
@@ -122,7 +141,7 @@ export const faqs: FaqItem[] = [
   {
     question: 'Does OotD work with the new Outlook?',
     answer:
-      'No. OotD uses Outlook Classic integration and does not work with the new Outlook app Microsoft is rolling out.',
+      'No. OotD uses Outlook Classic integration and does not work with the new Outlook app Microsoft is rolling out. If OotD says classic Outlook is required, install Outlook Classic or turn off the "New Outlook" toggle in Outlook, then start OotD again.',
   },
   {
     question: 'How do I change positioning, sizing, opacity, or the visible folder?',
