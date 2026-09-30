@@ -37,17 +37,21 @@ const screenshotByFile = Object.fromEntries(
   Object.entries(screenshotModules).map(([path, mod]) => [path.split('/').pop(), mod.default]),
 );
 
+// The home page hero keeps the light month view, which suits the site's color scheme,
+// while the gallery leads with the dark mode screenshot.
+export const heroScreenshot = {
+  image: screenshotByFile['MonthView.jpg'],
+  alt: 'Outlook on the Desktop month view displayed on the Windows desktop',
+  title: 'Month view',
+};
+
 export const screenshots = [
   {
     image: screenshotByFile['DarkMode.jpg'],
-    alt: 'Outlook on the Desktop in dark mode, showing a month calendar and a notes window over the desktop wallpaper',
+    alt: 'Outlook on the Desktop in dark mode, showing a month calendar and a notes window on a Windows 11 desktop',
     title: 'Dark mode',
   },
-  {
-    image: screenshotByFile['MonthView.jpg'],
-    alt: 'Outlook on the Desktop month view displayed on the Windows desktop',
-    title: 'Month view',
-  },
+  heroScreenshot,
   {
     image: screenshotByFile['WeekView.jpg'],
     alt: 'Outlook on the Desktop week view',

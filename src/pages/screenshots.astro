@@ -3,8 +3,8 @@ import { Image, getImage } from 'astro:assets';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { screenshots } from '@/data/site';
 
-// Thumbnails are cropped to a uniform 16:10 grid, so each one links to the uncropped
-// full-size image.
+// Thumbnails are cropped to a uniform 16:10 grid, so each one opens the uncropped
+// full-size image in a lightbox (or a new page without JS / on modifier-click).
 const fullSize = await Promise.all(
   screenshots.map((screenshot) => getImage({ src: screenshot.image, format: 'webp' })),
 );
@@ -25,11 +25,55 @@ const fullSize = await Promise.all(
   <section class="section screenshot-grid">
     {screenshots.map((screenshot, index) => (
       <article class="screenshot">
-        <a href={fullSize[index].src} title="View full size">
-          <Image src={screenshot.image} alt={screenshot.alt} loading="lazy" format="webp" />
+        <a class="screenshot-link" href={fullSize[index].src} title="View full size">
+          <Image
+            src={screenshot.image}
+            alt={screenshot.alt}
+            loading={index === 0 ? 'eager' : 'lazy'}
+            format="webp"
+          />
         </a>
         <h3>{screenshot.title}</h3>
       </article>
     ))}
   </section>
+
+  <dialog class="lightbox" aria-label="Screenshot">
+    <button class="lightbox-close" type="button" aria-label="Close">
+      &times;
+    </button>
+    <img class="lightbox-image" alt="" />
+    <p class="lightbox-caption"></p>
+  </dialog>
 </BaseLayout>
+
+<script>
+  const lightbox = document.querySelector<HTMLDialogElement>('.lightbox');
+  const lightboxImage = lightbox?.querySelector<HTMLImageElement>('.lightbox-image');
+  const lightboxCaption = lightbox?.querySelector<HTMLElement>('.lightbox-caption');
+  if (lightbox && lightboxImage && lightboxCaption) {
+    document.querySelectorAll<HTMLAnchorElement>('.screenshot-link').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        // Let modifier/middle clicks open the image in a new tab as usual.
+        if (
+          event.button !== 0 ||
+          event.metaKey ||
+          event.ctrlKey ||
+          event.shiftKey ||
+          event.altKey
+        ) {
+          return;
+        }
+        event.preventDefault();
+        lightboxImage.src = link.href;
+        lightboxImage.alt = link.querySelector('img')?.alt ?? '';
+        lightboxCaption.textContent =
+          link.closest('.screenshot')?.querySelector('h3')?.textContent ?? '';
+        lightbox.showModal();
+      });
+    });
+    // Esc closes the dialog natively; any click (image, backdrop, or close button) closes it too.
+    lightbox.addEventListener('click', () => lightbox.close());
+    lightbox.addEventListener('close', () => lightboxImage.removeAttribute('src'));
+  }
+</script>

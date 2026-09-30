@@ -456,7 +456,8 @@ p {
 }
 
 .screenshot-grid .screenshot:first-child img {
-  aspect-ratio: auto;
+  /* Matches the 16:9 dark mode screenshot so it isn't cropped. */
+  aspect-ratio: 16 / 9;
 }
 
 .feature,
@@ -555,6 +556,60 @@ p {
   width: 100%;
   object-fit: cover;
   background: var(--surface-strong);
+}
+
+.screenshot-link {
+  display: block;
+  cursor: zoom-in;
+}
+
+.lightbox {
+  max-width: 96vw;
+  max-height: 96vh;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-out;
+  overflow: visible;
+}
+
+.lightbox::backdrop {
+  background: rgba(8, 12, 18, 0.85);
+}
+
+.lightbox-image {
+  display: block;
+  max-width: 96vw;
+  max-height: calc(96vh - 48px);
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-caption {
+  margin-top: 12px;
+  color: #ffffff;
+  font-weight: 700;
+  text-align: center;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus-visible {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .screenshot h3 {

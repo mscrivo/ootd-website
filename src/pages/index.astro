@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { features, screenshots, site } from '@/data/site';
+import { features, heroScreenshot, site } from '@/data/site';
 
 const releaseDate = new Date(site.releaseDate).toLocaleDateString('en-US', {
   year: 'numeric',
@@ -83,8 +83,8 @@ const structuredData = {
     </div>
     <div class="product-shot">
       <Image
-        src={screenshots[0].image}
-        alt={screenshots[0].alt}
+        src={heroScreenshot.image}
+        alt={heroScreenshot.alt}
         format="webp"
         loading="eager"
         fetchpriority="high"
