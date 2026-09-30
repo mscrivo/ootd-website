@@ -82,14 +82,14 @@ export const screenshots = [
 export const features = [
   {
     icon: 'check',
-    title: 'Fully functional',
+    title: 'Full Outlook editing',
     description:
-      'Places a fully functional Microsoft Outlook calendar directly on your desktop. Create, edit, and remove items just like you would in Outlook.',
+      'Create, edit, and delete items directly on the desktop, the same way you would in Outlook.',
   },
   {
     icon: 'pin',
     title: 'Pinned to your desktop',
-    description: 'The calendar is pinned to your desktop so no windows can get stuck behind it.',
+    description: 'OotD windows stay on the desktop layer, behind your other applications.',
   },
   {
     icon: 'moon',
@@ -99,15 +99,15 @@ export const features = [
   },
   {
     icon: 'gear',
-    title: 'Customizable',
+    title: 'Adjustable layout',
     description:
-      "The calendar's position, size, and opacity are all easily adjustable, and calendar views use the time scale you've set in Outlook.",
+      "Set each window's position, size, and opacity. Calendar views use the time scale set in Outlook.",
   },
   {
     icon: 'monitor',
-    title: 'HiDPI & multi-monitor support',
+    title: 'High-DPI & multi-monitor',
     description:
-      'Full HiDPI and multi-monitor support lets you place instances across all of your screens.',
+      'Displays correctly on high-DPI screens, and windows can be placed on any monitor.',
   },
   {
     icon: 'stack',
@@ -119,19 +119,19 @@ export const features = [
     icon: 'calendar',
     title: 'Tray icon with day of month',
     description:
-      'A tray icon that shows the current day of the month gives you quick access to the app’s more advanced options.',
+      'The tray icon shows the current day of the month and provides access to all settings.',
   },
   {
     icon: 'list',
-    title: 'Use any Outlook view',
+    title: 'Any Outlook folder',
     description:
-      'Switch between any Outlook view, including calendar, inbox, contacts, tasks, and notes.',
+      'Display any Outlook folder or view, including calendar, inbox, contacts, tasks, and notes.',
   },
   {
     icon: 'shield',
-    title: 'Signed & self-updating',
+    title: 'Signed updates',
     description:
-      'Code signed, with built-in updates that are verified before they install and relaunch the app automatically.',
+      "The installer is code signed. Built-in updates verify the publisher's signature before installing, then restart the app.",
   },
 ];
 
