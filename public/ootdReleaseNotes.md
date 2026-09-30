@@ -1,5 +1,17 @@
 # OotD Release Notes
 
+## 5.6.1
+
+### Important
+
+- OotD only works with Outlook Classic, not the "new" Outlook that Microsoft is pushing on everyone. If you have the "new" Outlook, you will need to switch back to the classic version to use OotD.
+
+Fixes:
+
+- OotD now restarts after installing an update from "Install and relaunch"; previously it closed and stayed closed
+
+Note: because the restart is handled by the version you're updating _from_, OotD won't restart on its own after this update. Start it from the Start menu, or it'll start next time you sign in. Future updates will restart it automatically.
+
 ## 5.6.0
 
 ### Important
