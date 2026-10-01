@@ -7,9 +7,9 @@ export const site = {
     'A Windows utility that pins Outlook calendars, inboxes, notes, tasks, and folders directly on your desktop.',
   url: 'https://outlookonthedesktop.com',
   publisherId: 'ca-pub-4655649020743247',
-  latestVersion: '5.6.1',
-  releaseDate: '2026-09-30',
-  downloadUrl: 'https://github.com/mscrivo/OotD/releases/download/5.6.1/ootd-5.6.1.exe',
+  latestVersion: '5.7.0',
+  releaseDate: '2026-10-01',
+  downloadUrl: 'https://github.com/mscrivo/OotD/releases/download/5.7.0/ootd-5.7.0.exe',
   releasesUrl: 'https://github.com/mscrivo/OotD/releases',
   sourceUrl: 'https://github.com/mscrivo/OotD',
   // Social-share card generated from the logo by scripts/generate-og-image.mjs.

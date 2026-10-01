@@ -1,5 +1,27 @@
 # OotD Release Notes
 
+## 5.7.0
+
+### Important
+
+- OotD only works with Outlook Classic, not the "new" Outlook that Microsoft is pushing on everyone. If you have the "new" Outlook, you will need to switch back to the classic version to use OotD.
+
+New:
+
+- Adding an instance now lets you choose which folder it shows (Calendar, Contacts, Inbox, Notes, Tasks, To-Do List, or any other folder), and explains that the name is how the instance appears in the tray menu
+
+Changes:
+
+- A newly added instance now opens flush against the edge of an existing pane, keeping the group compact, instead of in the first free spot on the screen
+- At startup, all instances now appear together once they have loaded, instead of one at a time
+
+Fixes:
+
+- Adding or renaming an instance no longer accepts the name of another instance, which made the two share settings
+- Renaming an instance without changing its name, or changing only its capitalization, no longer erases its settings
+- Adding an instance after renaming another no longer opens a second copy of the renamed instance
+- When classic Outlook closes because Outlook was switched to the new Outlook for Windows, OotD now says so instead of suggesting Outlook crashed
+
 ## 5.6.1
 
 ### Important
