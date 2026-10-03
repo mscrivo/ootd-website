@@ -1,5 +1,23 @@
 # OotD Release Notes
 
+## 5.7.1
+
+### Important
+
+- OotD only works with Outlook Classic, not the "new" Outlook that Microsoft is pushing on everyone. If you have the "new" Outlook, you will need to switch back to the classic version to use OotD.
+
+New:
+
+- Korean translation
+
+Changes:
+
+- Internal cleanup: removed unused code and one third-party library, making the app a little smaller
+
+Fixes:
+
+- Startup error messages (shown when Outlook can't be found) now appear in Japanese, Korean, Brazilian Portuguese and Simplified Chinese
+
 ## 5.7.0
 
 ### Important
